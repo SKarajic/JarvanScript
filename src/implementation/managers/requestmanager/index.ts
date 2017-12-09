@@ -1,6 +1,7 @@
 import { Regions } from "../../../enums";
-import { RegionManager, KeyManager } from "..";
+import { RegionManager } from "../regionmanager";
 import { RequestInfo } from "../../../interfaces";
+import { KeyManager } from "../keymanager";
 const request = require('request');
 
 export class RequestManager {
@@ -33,12 +34,11 @@ export class RequestManager {
         url: string, 
         requestInfo: RequestInfo, 
         region: Regions
-    ) : Promise<object|Array<object>> {
+    ) : Promise<any|Array<any>> {
         return new Promise((resolve, reject) => {
             url = url.replace('{region}', region);
             for (let key in requestInfo) {
                 if ((<any>requestInfo)[key]) {
-                    console.log(key + ' = ' + (<any>requestInfo)[key])
                     url = url.replace(`{${key}}`, (<any>requestInfo)[key]);
                 }
             }

@@ -15,7 +15,6 @@ describe('ChampionMasteryMethods', () => {
     it('should get champion masteries of summoner', (done) => {
         ChampionMasteryMethods.getChampionMasteries(69658457)
             .then((data) => {
-                console.log(data);
                 done();
             })
             .catch((err) => console.log(err));
@@ -24,8 +23,19 @@ describe('ChampionMasteryMethods', () => {
     it('should get champion masteries of summoner with champion id 7', (done) => {
         ChampionMasteryMethods.getChampionMasteries(69658457, 7)
             .then((data) => {
-                console.log(data);
                 done();
+            })
+            .catch((err) => console.log(err));
+    })
+
+    it('should get the total amount of points of summoner', (done) => {
+        ChampionMasteryMethods.getChampionMasteryScore(69658457)
+            .then((data) => {
+                if (typeof data == "number") {
+                    done();
+                } else {
+                    throw new Error('not a number, this is the object: ' + data);
+                }
             })
             .catch((err) => console.log(err));
     })
