@@ -1,5 +1,7 @@
 import { Regions } from "../../../enums";
-import { RegionManager } from "../regionmanager";
+import { RegionManager, KeyManager } from "..";
+import { RequestInfo } from "../../../interfaces";
+const request = require('request');
 
 export class RequestManager {
 
@@ -29,10 +31,33 @@ export class RequestManager {
 
     public getDynamicData(
         url: string, 
-        requestInfo?: object, 
-        region: Regions = RegionManager.getInstance().getRegion()
-    ) {
-        
+        requestInfo: RequestInfo, 
+        region: Regions
+    ) : Promise<object|Array<object>> {
+        return new Promise((resolve, reject) => {
+            url = url.replace('{region}', region);
+            for (let key in requestInfo) {
+                if ((<any>requestInfo)[key]) {
+                    console.log(key + ' = ' + (<any>requestInfo)[key])
+                    url = url.replace(`{${key}}`, (<any>requestInfo)[key]);
+                }
+            }
+
+            const options = {
+                url: url,
+                headers: {
+                    "X-Riot-Token": KeyManager.getInstance().getKey()
+                }
+            }
+
+            request(options, (error: any, response: any, body: any) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(body);
+                }
+            })
+        });
     }
 
     public getStaticData(

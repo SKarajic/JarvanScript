@@ -1,15 +1,15 @@
 import { Queues } from "../enums";
 
 export interface RequestInfo {  
-    byAccountId?: number,
-    byChampionId?: number,
-    byItemId?: number,
-    byLeagueId?: number,
-    byMasteryId?: number,
-    byMatchId?: number,
-    byQueue?: string|Queues,
-    byRuneId?: number,
-    bySummonerId?: number,
-    bySummonerName?: string,
-    bySummonerSpellId: number
+    accountId?: number,
+    championId?: number,
+    itemId?: number,
+    leagueId?: number,
+    masteryId?: number,
+    matchId?: number,
+    queue?: string|Queues,
+    runeId?: number,
+    summonerId?: number,
+    summonerName?: string,
+    summonerSpellId?: number
 }
