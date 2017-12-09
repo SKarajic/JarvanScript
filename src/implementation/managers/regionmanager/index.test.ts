@@ -1,5 +1,5 @@
 import { RegionManager } from '.';
-import { Regions } from '../../enums';
+import { Regions } from '../../../enums';
 import { expect } from 'chai';
 import 'mocha';
 

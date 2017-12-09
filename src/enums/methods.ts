@@ -134,8 +134,7 @@ const Methods = {
         },
         BY_ACCOUNT_ID: {
             VALUE: " https://{region}.api.riotgames.com/lol/summoner/v3/summoners/by-account/{accountId}"
-        }
+        },
     },
 }
-
 export default Methods;

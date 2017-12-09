@@ -1,4 +1,4 @@
-import { Regions } from "../../enums";
+import { Regions } from "../../../enums";
 
 export class RegionManager {
     

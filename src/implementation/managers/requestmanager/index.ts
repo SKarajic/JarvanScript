@@ -1,4 +1,4 @@
-import { Regions } from "../../enums";
+import { Regions } from "../../../enums";
 import { RegionManager } from "../regionmanager";
 
 export class RequestManager {
@@ -32,7 +32,7 @@ export class RequestManager {
         requestInfo?: object, 
         region: Regions = RegionManager.getInstance().getRegion()
     ) {
-
+        
     }
 
     public getStaticData(
