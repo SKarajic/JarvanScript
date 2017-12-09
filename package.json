@@ -9,17 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SKarajic/NodeLoL.git"
+    "url": "git+https://github.com/SKarajic/JarvanScript.git"
   },
   "author": "Sandi Karajic",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SKarajic/NodeLoL/issues"
+    "url": "https://github.com/SKarajic/JarvanScript/issues"
   },
-  "homepage": "https://github.com/SKarajic/NodeLoL#readme",
+  "homepage": "https://github.com/SKarajic/JarvanScript#readme",
   "dependencies": {
-    "request": "^2.83.0",
-    "typescript": "^2.6.2"
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "@types/chai": "^4.0.6",
@@ -27,6 +26,7 @@
     "@types/node": "^8.0.53",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
-    "ts-node": "^3.3.0"
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2"
   }
 }
