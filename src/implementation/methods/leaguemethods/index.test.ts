@@ -32,22 +32,26 @@ describe('LeagueMethods', () => {
         }
     })
 
-    it('should get the ranks of a summoner', (done) => {
-        LeagueMethods.getRanks(69658457)
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get the ranks of a summoner', async () => {
+        try {
+            const leaguePositions = await LeagueMethods.getRanks(69658457);
+            expect(leaguePositions[0].leagueId).to.be.a('string');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
     
-    it('should get the league of a summoner', (done) => {
-        LeagueMethods.getRanks(69658457)
-            .then((data) => {
-                return LeagueMethods.getLeague(data[0].leagueId);
-            })
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get the league of a summoner', async () => {
+        try {
+            const leaguePositions = await LeagueMethods.getRanks(69658457);
+            const leagueList = await LeagueMethods.getLeague(leaguePositions[0].leagueId);
+
+            expect(leaguePositions[0].leagueId).to.be.a('string');
+            expect(leagueList.name).to.be.a('string');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
 });

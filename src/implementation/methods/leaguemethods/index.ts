@@ -1,8 +1,10 @@
 import { RequestManager, RegionManager } from "../../managers";
 import { Methods, Regions, Queues } from '../../../enums'
 import { RequestInfo } from "../../../interfaces";
-import { LeagueList } from './classes';
+import { LeagueList, LeaguePosition } from './classes';
 const methods = Methods.LEAGUE;
+const regManager = RegionManager.getInstance();
+const reqManager = RequestManager.getInstance();
 
 export namespace LeagueMethods {
 
@@ -13,7 +15,7 @@ export namespace LeagueMethods {
      */
     export async function getChallengerLeague(
         queue: string,
-        region: Regions = RegionManager.getInstance().getRegion()
+        region: Regions = regManager.getRegion()
     ): Promise<LeagueList>  {
         let url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE
         let validQueue = false;
@@ -25,7 +27,7 @@ export namespace LeagueMethods {
         }
 
         if (validQueue) {
-            let data = JSON.parse(await RequestManager.getInstance().getDynamicData(url, {queue}, region));
+            let data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
             return new LeagueList(data, region);
         } else {
             throw new Error(queue + ' is not a valid queue');
@@ -39,7 +41,7 @@ export namespace LeagueMethods {
      */
     export async function getMasterLeague(
         queue: string,
-        region: Regions = RegionManager.getInstance().getRegion()
+        region: Regions = regManager.getRegion()
     ): Promise<LeagueList> {
         let url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE
         let validQueue = false;
@@ -51,7 +53,7 @@ export namespace LeagueMethods {
         }
 
         if (validQueue) {
-            let data = JSON.parse(await RequestManager.getInstance().getDynamicData(url, {queue}, region));
+            let data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
             return new LeagueList(data, region);
         } else {
             throw new Error(queue + ' is not a valid queue');
@@ -63,35 +65,25 @@ export namespace LeagueMethods {
      * @param summonerId the ID of the summoner
      * @param region the region of choice (optional)
      */
-    export function getRanks(
+    export async function getRanks(
         summonerId: number,
-        region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<any> {
-        return new Promise((resolve, reject) => {
-            let url = methods.POSITIONS.BY_SUMMONER_ID.VALUE
-            RequestManager.getInstance().getDynamicData(url, {summonerId}, region)
-            .then((data) => {
-                resolve(JSON.parse(data));
-            })
-            .catch((err) => {
-                reject(err);
-            })
-        }); 
+        region: Regions = regManager.getRegion()
+    ): Promise<LeaguePosition[]> {
+        let url = methods.POSITIONS.BY_SUMMONER_ID.VALUE;
+        let data = JSON.parse(await reqManager.getDynamicData(url, {summonerId}, region));
+        let positionList: LeaguePosition[] = [];
+        data.forEach((element: any) => {
+            positionList.push(new LeaguePosition(element, region));
+        });
+        return positionList;
     }
 
-    export function getLeague(
+    export async function getLeague(
         leagueId: string,
-        region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<any> {
-        return new Promise((resolve, reject) => {
-            let url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
-            RequestManager.getInstance().getDynamicData(url, {leagueId}, region)
-            .then((data) => {
-                resolve(JSON.parse(data));
-            })
-            .catch((err) => {
-                reject(err);
-            })
-        }); 
+        region: Regions = regManager.getRegion()
+    ): Promise<LeagueList> {
+        let url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
+        let data = JSON.parse(await reqManager.getDynamicData(url, {leagueId}, region));
+        return new LeagueList(data, region);
     }
 }
