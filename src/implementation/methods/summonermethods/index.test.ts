@@ -20,7 +20,7 @@ describe('SummonerMethods', () => {
             .catch((err) => console.log(err));
     })
 
-    it('should get summoner by account id', (done) => {
+    it('should get summoner by summoner id', (done) => {
         SummonerMethods.getSummonerById(69658457)
             .then((data) => {
                 done();
@@ -28,7 +28,7 @@ describe('SummonerMethods', () => {
             .catch((err) => console.log(err));
     })
 
-    it('should get summoner by account id', (done) => {
+    it('should get summoner by summoner name', (done) => {
         SummonerMethods.getSummonerByName("IAmTheWhite")
             .then((data) => {
                 done();
