@@ -97,8 +97,14 @@ const Methods = {
     },
     MATCH: {
         MATCHES: {
-            BY_MATCH_ID: {
+            BY_TOURNAMENT_CODE: {
                 VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids"
+            },
+            BY_MATCH_ID: {
+                VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/{matchId}",
+                BY_TOURNAMENT_CODE: {
+                    VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}"
+                }
             }
         },
         MATCH_LISTS: {

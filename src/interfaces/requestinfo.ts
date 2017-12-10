@@ -9,6 +9,7 @@ export interface RequestInfo {
     matchId?: number,
     queue?: string|Queues,
     runeId?: number,
+    tournamentCode?: any,
     summonerId?: number,
     summonerName?: string,
     summonerSpellId?: number

@@ -15,7 +15,7 @@ export namespace ChampionMasteryMethods {
         summonerId: number, 
         championId?: number, 
         region: Regions = RegionManager.getInstance().getRegion()
-    ) : (Promise<object>|Promise<Array<object>>) {
+    ) : Promise<any> {
         return new Promise((resolve, reject) => {  
             let url;
             if (championId != void 0) {

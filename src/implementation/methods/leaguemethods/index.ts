@@ -13,7 +13,7 @@ export namespace LeagueMethods {
     export function getChallengerLeague(
         queue: string,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<object|Array<object>>  {
+    ): Promise<any>  {
         return new Promise((resolve, reject) => {
             let url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE
             let validQueue = false;
@@ -46,7 +46,7 @@ export namespace LeagueMethods {
     export function getMasterLeague(
         queue: string,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<object|Array<object>> {
+    ): Promise<any> {
         return new Promise((resolve, reject) => {
             let url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE
             let validQueue = false;
@@ -79,7 +79,7 @@ export namespace LeagueMethods {
     export function getRanks(
         summonerId: number,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): (Promise<object>|Promise<Array<object>>)  {
+    ): Promise<any> {
         return new Promise((resolve, reject) => {
             let url = methods.POSITIONS.BY_SUMMONER_ID.VALUE
             RequestManager.getInstance().getDynamicData(url, {summonerId}, region)
@@ -95,7 +95,7 @@ export namespace LeagueMethods {
     export function getLeague(
         leagueId: string,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): (Promise<object>|Promise<Array<object>>)  {
+    ): Promise<any> {
         return new Promise((resolve, reject) => {
             let url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
             RequestManager.getInstance().getDynamicData(url, {leagueId}, region)
