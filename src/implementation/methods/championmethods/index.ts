@@ -13,7 +13,7 @@ export namespace ChampionMethods {
     export function getChampions(
         championId?: number, 
         region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<any> {
+    ): (Promise<object>|Promise<Array<object>>) {
         return new Promise((resolve, reject) => {  
             let url;
             if (championId != void 0) {
@@ -23,7 +23,7 @@ export namespace ChampionMethods {
             }
             RequestManager.getInstance().getDynamicData(url, {championId}, region)
             .then((data) => {
-                resolve(data);
+                resolve(JSON.parse(data));
             })
             .catch((err) => {
                 reject(err);

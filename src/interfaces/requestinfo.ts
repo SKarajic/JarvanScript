@@ -4,7 +4,7 @@ export interface RequestInfo {
     accountId?: number,
     championId?: number,
     itemId?: number,
-    leagueId?: number,
+    leagueId?: string,
     masteryId?: number,
     matchId?: number,
     queue?: string|Queues,
