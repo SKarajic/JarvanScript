@@ -1,6 +1,7 @@
 import { RequestManager, RegionManager } from "../../managers";
 import { Methods, Regions, Queues } from '../../../enums'
 import { RequestInfo } from "../../../interfaces";
+import { LeagueList } from './classes';
 const methods = Methods.LEAGUE;
 
 export namespace LeagueMethods {
@@ -10,32 +11,25 @@ export namespace LeagueMethods {
      * @param queue the type of ranked queue
      * @param region the region of choice (optional)
      */
-    export function getChallengerLeague(
+    export async function getChallengerLeague(
         queue: string,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<any>  {
-        return new Promise((resolve, reject) => {
-            let url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE
-            let validQueue = false;
+    ): Promise<LeagueList>  {
+        let url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE
+        let validQueue = false;
 
-            for (const key in Queues) {
-                if (Queues[key] == queue) {
-                    validQueue = true;
-                }
+        for (const key in Queues) {
+            if (Queues[key] == queue) {
+                validQueue = true;
             }
+        }
 
-            if (validQueue) {
-                RequestManager.getInstance().getDynamicData(url, {queue}, region)
-                .then((data) => {
-                    resolve(data);
-                })
-                .catch((err) => {
-                    reject(err);
-                })
-            } else {
-                reject(new Error(queue + ' is not a valid queue'));
-            }
-        }); 
+        if (validQueue) {
+            let data = JSON.parse(await RequestManager.getInstance().getDynamicData(url, {queue}, region));
+            return new LeagueList(data, region);
+        } else {
+            throw new Error(queue + ' is not a valid queue');
+        }
     }
     
     /**
@@ -43,32 +37,25 @@ export namespace LeagueMethods {
      * @param queue the type of ranked queue
      * @param region the region of choice (optional)
      */
-    export function getMasterLeague(
+    export async function getMasterLeague(
         queue: string,
         region: Regions = RegionManager.getInstance().getRegion()
-    ): Promise<any> {
-        return new Promise((resolve, reject) => {
-            let url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE
-            let validQueue = false;
+    ): Promise<LeagueList> {
+        let url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE
+        let validQueue = false;
 
-            for (const key in Queues) {
-                if (Queues[key] == queue) {
-                    validQueue = true;
-                }
+        for (const key in Queues) {
+            if (Queues[key] == queue) {
+                validQueue = true;
             }
+        }
 
-            if (validQueue) {
-                RequestManager.getInstance().getDynamicData(url, {queue}, region)
-                .then((data) => {
-                    resolve(JSON.parse(data));
-                })
-                .catch((err) => {
-                    reject(err);
-                })
-            } else {
-                reject(new Error(queue + ' is not a valid queue'));
-            }
-        }); 
+        if (validQueue) {
+            let data = JSON.parse(await RequestManager.getInstance().getDynamicData(url, {queue}, region));
+            return new LeagueList(data, region);
+        } else {
+            throw new Error(queue + ' is not a valid queue');
+        }
     }
 
     /**

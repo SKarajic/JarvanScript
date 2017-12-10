@@ -1,0 +1,1 @@
+export {default as LeagueList} from './leaguelist';

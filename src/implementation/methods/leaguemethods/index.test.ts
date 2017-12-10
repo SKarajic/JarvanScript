@@ -12,20 +12,24 @@ beforeEach(() => {
 })
 
 describe('LeagueMethods', () => {
-    it('should get the challenger solo queue league', (done) => {
-        LeagueMethods.getChallengerLeague('RANKED_SOLO_5x5')
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get the challenger solo queue league', async () => {
+        try {
+            const ladder = await LeagueMethods.getChallengerLeague('RANKED_SOLO_5x5');
+            expect(ladder.name).to.be.a('string');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
 
-    it('should get the master solo queue league', (done) => {
-        LeagueMethods.getMasterLeague('RANKED_SOLO_5x5')
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get the master solo queue league', async () => {
+        try {
+            const ladder = await LeagueMethods.getMasterLeague('RANKED_SOLO_5x5');
+            expect(ladder.name).to.be.a('string');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
 
     it('should get the ranks of a summoner', (done) => {

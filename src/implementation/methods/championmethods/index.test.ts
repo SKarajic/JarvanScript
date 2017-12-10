@@ -12,19 +12,23 @@ beforeEach(() => {
 })
 
 describe('ChampionMethods', () => {
-    it('should get data of all champions', (done) => {
-        ChampionMethods.getChampions()
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get data of all champions', async () => {
+        try {
+            const cil = await ChampionMethods.getChampions()
+            expect(cil[0].id).to.be.a('number');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
 
-    it('should get data of champion with id 7', (done) => {
-        ChampionMethods.getChampions(7)
-            .then((data) => {
-                done();
-            })
-            .catch((err) => console.log(err));
+    it('should get data of champion with id 7', async () => {
+        try {
+            const cil = await ChampionMethods.getChampions(7);
+            expect(cil[0].id).to.be.a('number');
+        }
+        catch(err) {
+            console.log(err);
+        }
     })
 });
