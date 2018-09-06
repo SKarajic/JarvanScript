@@ -19,7 +19,7 @@ export default class JarvanScript {
     public static = StaticMethods;
     public summoner = SummonerMethods;
     
-    constructor(key: string, region: string = Regions.EUW, config: object) {
+    constructor(key: string, region: Regions|string = Regions.EUW, config: object) {
         KeyManager.getInstance().setKey(key);
         RegionManager.getInstance().setRegion(region);
     }
