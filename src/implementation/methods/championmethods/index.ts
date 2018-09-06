@@ -1,5 +1,4 @@
 import { Methods, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 import { ChampionInfo } from "./classes";
 const methods = Methods.CHAMPION;
