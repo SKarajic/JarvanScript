@@ -3,7 +3,7 @@ import { Regions } from "../../../enums";
 export class RegionManager {
     
     private static _instance: RegionManager = new RegionManager();
-    private _region: Regions;
+    private _region: Regions = Regions.EUW;
     
     /**
     * Instantiates the RegionManager singleton if it doesn't exist, else 

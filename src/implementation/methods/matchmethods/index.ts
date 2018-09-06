@@ -6,16 +6,10 @@ const methods = Methods.MATCH;
 export namespace MatchMethods {
     export function getMatchList(
         accountId: number, 
-        recent: boolean = false, 
         region: Regions = RegionManager.getInstance().getRegion()
     ): Promise<any> {
         return new Promise((resolve, reject) => {  
-            let url;
-            if (recent) {
-                url = methods.MATCH_LISTS.BY_ACCOUNT_ID.RECENT.VALUE;
-            } else {
-                url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
-            }
+            let url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
             RequestManager.getInstance().getDynamicData(url, {accountId}, region)
             .then((data) => {
                 resolve(JSON.parse(data));
