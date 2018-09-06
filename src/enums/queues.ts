@@ -4,9 +4,9 @@
  * - SOLO_THREE: ranked flex queue on twisted treeline
  */
 enum Queues {
-    SOLO_QUEUE = "RANKED_SOLO_5x5",
-    FLEX_QUEUE = "RANKED_FLEX_SR",
-    FLEX_THREE = "RANKED_FLEX_TT",
+  SOLO_QUEUE = "RANKED_SOLO_5x5",
+  FLEX_QUEUE = "RANKED_FLEX_SR",
+  FLEX_THREE = "RANKED_FLEX_TT",
 }
 
 export default Queues;

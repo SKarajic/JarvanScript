@@ -1,1 +1,1 @@
-export {default as JarvanScript} from "./jarvanscript";
+export { default as JarvanScript } from "./jarvanscript";
