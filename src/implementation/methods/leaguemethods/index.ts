@@ -1,7 +1,7 @@
-import { RequestManager, RegionManager } from "../../managers";
-import { Methods, Regions, Queues } from '../../../enums'
-import { RequestInfo } from "../../../interfaces";
-import { LeagueList, LeaguePosition } from './classes';
+import { Methods, Queues, Regions } from "../../../enums";
+import { IRequestInfo } from "../../../interfaces";
+import { RegionManager, RequestManager } from "../../managers";
+import { LeagueList, LeaguePosition } from "./classes";
 const methods = Methods.LEAGUE;
 const regManager = RegionManager.getInstance();
 const reqManager = RequestManager.getInstance();
@@ -15,9 +15,9 @@ export namespace LeagueMethods {
      */
     export async function getChallengerLeague(
         queue: string,
-        region: Regions = regManager.getRegion()
+        region: Regions = regManager.getRegion(),
     ): Promise<LeagueList>  {
-        let url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE
+        const url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE;
         let validQueue = false;
 
         for (const key in Queues) {
@@ -27,13 +27,13 @@ export namespace LeagueMethods {
         }
 
         if (validQueue) {
-            let data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
+            const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
             return new LeagueList(data, region);
         } else {
-            throw new Error(queue + ' is not a valid queue');
+            throw new Error(queue + " is not a valid queue");
         }
     }
-    
+
     /**
      * Returns the master league.
      * @param queue the type of ranked queue
@@ -41,9 +41,9 @@ export namespace LeagueMethods {
      */
     export async function getMasterLeague(
         queue: string,
-        region: Regions = regManager.getRegion()
+        region: Regions = regManager.getRegion(),
     ): Promise<LeagueList> {
-        let url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE
+        const url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE;
         let validQueue = false;
 
         for (const key in Queues) {
@@ -53,10 +53,10 @@ export namespace LeagueMethods {
         }
 
         if (validQueue) {
-            let data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
+            const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
             return new LeagueList(data, region);
         } else {
-            throw new Error(queue + ' is not a valid queue');
+            throw new Error(queue + " is not a valid queue");
         }
     }
 
@@ -67,11 +67,11 @@ export namespace LeagueMethods {
      */
     export async function getRanks(
         summonerId: number,
-        region: Regions = regManager.getRegion()
+        region: Regions = regManager.getRegion(),
     ): Promise<LeaguePosition[]> {
-        let url = methods.POSITIONS.BY_SUMMONER_ID.VALUE;
-        let data = JSON.parse(await reqManager.getDynamicData(url, {summonerId}, region));
-        let positionList: LeaguePosition[] = [];
+        const url = methods.POSITIONS.BY_SUMMONER_ID.VALUE;
+        const data = JSON.parse(await reqManager.getDynamicData(url, {summonerId}, region));
+        const positionList: LeaguePosition[] = [];
         data.forEach((element: any) => {
             positionList.push(new LeaguePosition(element, region));
         });
@@ -80,10 +80,10 @@ export namespace LeagueMethods {
 
     export async function getLeague(
         leagueId: string,
-        region: Regions = regManager.getRegion()
+        region: Regions = regManager.getRegion(),
     ): Promise<LeagueList> {
-        let url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
-        let data = JSON.parse(await reqManager.getDynamicData(url, {leagueId}, region));
+        const url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
+        const data = JSON.parse(await reqManager.getDynamicData(url, {leagueId}, region));
         return new LeagueList(data, region);
     }
 }

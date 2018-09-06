@@ -1,4 +1,6 @@
-import { 
+import { Regions } from "../../enums";
+import { KeyManager, RegionManager } from "../managers";
+import {
     ChampionMasteryMethods,
     ChampionMethods,
     LeagueMethods,
@@ -6,9 +8,7 @@ import {
     SpectateMethods,
     StaticMethods,
     SummonerMethods,
-} from '../methods';
-import { KeyManager, RegionManager } from "../managers";
-import { Regions, Methods } from "../../enums";
+} from "../methods";
 
 export default class JarvanScript {
     public championMastery = ChampionMasteryMethods;
@@ -18,7 +18,7 @@ export default class JarvanScript {
     public spectate = SpectateMethods;
     public static = StaticMethods;
     public summoner = SummonerMethods;
-    
+
     constructor(key: string, region: Regions|string = Regions.EUW, config: object) {
         KeyManager.getInstance().setKey(key);
         RegionManager.getInstance().setRegion(region);

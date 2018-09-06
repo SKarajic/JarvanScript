@@ -1,1 +1,1 @@
-export {default as ChampionMastery} from './championmastery';
+export {default as ChampionMastery} from "./championmastery";

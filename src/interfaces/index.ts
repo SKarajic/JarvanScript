@@ -1,1 +1,1 @@
-export { RequestInfo } from './requestinfo';
+export { IRequestInfo } from "./requestinfo";

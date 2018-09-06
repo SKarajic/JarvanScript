@@ -1,5 +1,5 @@
-import { AbstractMethodClass } from '../../abstractmethodclass'; 
-import { Regions } from '../../../../enums';
+import { Regions } from "../../../../enums";
+import { AbstractMethodClass } from "../../abstractmethodclass";
 
 export default class MiniSeries extends AbstractMethodClass {
     public wins: number;

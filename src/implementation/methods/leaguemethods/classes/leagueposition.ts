@@ -1,6 +1,6 @@
-import { AbstractMethodClass } from '../../abstractmethodclass'; 
-import { Regions } from '../../../../enums';
-import MiniSeries from './miniseries';
+import { Regions } from "../../../../enums";
+import { AbstractMethodClass } from "../../abstractmethodclass";
+import MiniSeries from "./miniseries";
 
 export default class LeaguePosition extends AbstractMethodClass {
     public rank: string;
@@ -34,7 +34,7 @@ export default class LeaguePosition extends AbstractMethodClass {
             inactive,
             playerOrTeamId,
             tier,
-            leaguePoints
+            leaguePoints,
         } = requestObject;
 
         this.rank = rank;

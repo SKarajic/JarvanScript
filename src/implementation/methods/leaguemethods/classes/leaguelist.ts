@@ -1,13 +1,13 @@
-import LeagueItem from './leagueitem';
-import { AbstractMethodClass } from '../../abstractmethodclass'; 
-import { Regions } from '../../../../enums';
+import { Regions } from "../../../../enums";
+import { AbstractMethodClass } from "../../abstractmethodclass";
+import LeagueItem from "./leagueitem";
 
 export default class LeagueList extends AbstractMethodClass {
-    public leagueId: string	
-    public tier: string	
-    public entries:	Array<LeagueItem>
-    public queue: string	
-    public name: string
+    public leagueId: string;
+    public tier: string;
+    public entries:	LeagueItem[];
+    public queue: string;
+    public name: string;
 
     constructor(requestObject: any, region: Regions) {
         super(region);
@@ -16,10 +16,10 @@ export default class LeagueList extends AbstractMethodClass {
             tier,
             entries,
             queue,
-            name
+            name,
         } = requestObject;
 
-        let objectEntries: LeagueItem[] = []
+        const objectEntries: LeagueItem[] = [];
         entries.forEach((entry: any) => {
             objectEntries.push(new LeagueItem(entry, region));
         });

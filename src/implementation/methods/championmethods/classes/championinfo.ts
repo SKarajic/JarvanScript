@@ -1,5 +1,5 @@
 import { Regions } from "../../../../enums";
-import { AbstractMethodClass } from '../../abstractmethodclass'; 
+import { AbstractMethodClass } from "../../abstractmethodclass";
 
 export default class ChampionInfo extends AbstractMethodClass {
     public rankedEnabled: boolean;
@@ -17,9 +17,9 @@ export default class ChampionInfo extends AbstractMethodClass {
             botMmEnabled,
             active,
             freeToPlay,
-            id
+            id,
         } = requestObject;
-        
+
         this.rankedEnabled = rankedPlayEnabled;
         this.customBotEnabled = botEnabled;
         this.coopBotEnabled = botMmEnabled;

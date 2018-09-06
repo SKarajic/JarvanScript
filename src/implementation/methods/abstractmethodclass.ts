@@ -5,10 +5,10 @@ export abstract class AbstractMethodClass {
     protected region: Regions;
 
     constructor(region: any) {
-        this.region = <Regions> region;
-    } 
+        this.region = region as Regions;
+    }
 
-    toJSON() {
-        let copy = Object.assign({}, this, {region: null});
+    public toJSON() {
+        const copy = Object.assign({}, this, {region: null});
     }
 }

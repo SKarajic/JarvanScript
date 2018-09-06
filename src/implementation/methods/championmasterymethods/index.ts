@@ -1,13 +1,13 @@
-import { RequestManager, RegionManager } from "../../managers";
-import { ChampionMastery } from './classes';
-import { Methods, Regions } from '../../../enums'
-import { RequestInfo } from "../../../interfaces";
+import { Methods, Regions } from "../../../enums";
+import { IRequestInfo } from "../../../interfaces";
+import { RegionManager, RequestManager } from "../../managers";
+import { ChampionMastery } from "./classes";
 const methods = Methods.CHAMPION_MASTERY;
 const reqManager = RequestManager.getInstance();
 const regManager = RegionManager.getInstance();
 
 export namespace ChampionMasteryMethods {
-    
+
     /**
      * Returns one or all Champion Masteries of a summoner.
      * @param summonerId the ID of the summoner
@@ -15,26 +15,26 @@ export namespace ChampionMasteryMethods {
      * @param region the region of choice (optional)
      */
     export async function getChampionMasteries(
-        summonerId: number, 
-        championId?: number, 
-        region: Regions = regManager.getRegion()
-    ) : Promise<ChampionMastery[]> {
+        summonerId: number,
+        championId?: number,
+        region: Regions = regManager.getRegion(),
+    ): Promise<ChampionMastery[]> {
         let url;
         if (championId != void 0) {
             url = methods.CHAMPION_MASTERIES.BY_SUMMONER_ID.BY_CHAMPION_ID.VALUE;
         } else {
             url = methods.CHAMPION_MASTERIES.BY_SUMMONER_ID.VALUE;
         }
-        let data = JSON.parse(await reqManager.getDynamicData(url, {summonerId, championId}, region));
-        let championMasteryList: Array<ChampionMastery> = [];
+        const data = JSON.parse(await reqManager.getDynamicData(url, {summonerId, championId}, region));
+        const championMasteryList: ChampionMastery[] = [];
         if (Array.isArray(data)) {
-            data.forEach(element => championMasteryList.push(new ChampionMastery(element, region)));
+            data.forEach((element) => championMasteryList.push(new ChampionMastery(element, region)));
         } else {
-            championMasteryList.push(new ChampionMastery(data, region))
+            championMasteryList.push(new ChampionMastery(data, region));
         }
         return championMasteryList;
     }
-    
+
     /**
      * Returns the combined level of all the Champion Masteries of a summoner
      * @param summonerId the ID of the summoner
@@ -42,9 +42,9 @@ export namespace ChampionMasteryMethods {
      */
     export async function getChampionMasteryScore(
         summonerId: number,
-        region: Regions = RegionManager.getInstance().getRegion()
+        region: Regions = RegionManager.getInstance().getRegion(),
     ): Promise<number> {
-        let url = methods.SCORES.BY_SUMMONER_ID.VALUE;
+        const url = methods.SCORES.BY_SUMMONER_ID.VALUE;
         return parseInt(await RequestManager.getInstance().getDynamicData(url, {summonerId}, region));
     }
 }

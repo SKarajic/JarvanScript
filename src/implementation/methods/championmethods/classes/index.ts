@@ -1,1 +1,1 @@
-export {default as ChampionInfo} from './championinfo';
+export {default as ChampionInfo} from "./championinfo";

@@ -1,6 +1,6 @@
-import MiniSeries from './miniseries';
-import { AbstractMethodClass } from '../../abstractmethodclass'; 
-import { Regions } from '../../../../enums';
+import { Regions } from "../../../../enums";
+import { AbstractMethodClass } from "../../abstractmethodclass";
+import MiniSeries from "./miniseries";
 
 export default class LeagueItem extends AbstractMethodClass {
     public rank: string;

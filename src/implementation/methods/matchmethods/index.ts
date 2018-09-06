@@ -1,31 +1,31 @@
-import { RequestManager, RegionManager } from "../../managers";
-import { Methods, Regions, Queues } from '../../../enums'
-import { RequestInfo } from "../../../interfaces";
+import { Methods, Queues, Regions } from "../../../enums";
+import { IRequestInfo } from "../../../interfaces";
+import { RegionManager, RequestManager } from "../../managers";
 const methods = Methods.MATCH;
 
 export namespace MatchMethods {
     export function getMatchList(
-        accountId: number, 
-        region: Regions = RegionManager.getInstance().getRegion()
+        accountId: number,
+        region: Regions = RegionManager.getInstance().getRegion(),
     ): Promise<any> {
-        return new Promise((resolve, reject) => {  
-            let url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
+        return new Promise((resolve, reject) => {
+            const url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
             RequestManager.getInstance().getDynamicData(url, {accountId}, region)
             .then((data) => {
                 resolve(JSON.parse(data));
             })
             .catch((err) => {
                 reject(err);
-            })
+            });
         });
     }
-    
+
     export function getMatchInfo(
-        matchId: number, 
+        matchId: number,
         tournamentCode?: any,
-        region: Regions = RegionManager.getInstance().getRegion()
+        region: Regions = RegionManager.getInstance().getRegion(),
     ) {
-        return new Promise((resolve, reject) => {  
+        return new Promise((resolve, reject) => {
             let url = methods.MATCHES.BY_MATCH_ID.VALUE;
             if (tournamentCode != void 0) {
                 url = methods.MATCHES.BY_MATCH_ID.BY_TOURNAMENT_CODE.VALUE;
@@ -36,41 +36,41 @@ export namespace MatchMethods {
             })
             .catch((err) => {
                 reject(err);
-            })
+            });
         });
     }
 
     export function getTournamentMatchIds(
         tournamentCode: any,
-        region: Regions = RegionManager.getInstance().getRegion()
+        region: Regions = RegionManager.getInstance().getRegion(),
     ) {
-        return new Promise((resolve, reject) => {  
-            let url = methods.MATCHES.BY_TOURNAMENT_CODE.VALUE;
+        return new Promise((resolve, reject) => {
+            const url = methods.MATCHES.BY_TOURNAMENT_CODE.VALUE;
             RequestManager.getInstance().getDynamicData(url, {tournamentCode}, region)
             .then((data) => {
                 resolve(JSON.parse(data));
             })
             .catch((err) => {
                 reject(err);
-            })
+            });
         });
     }
 
     export function getMatchTimeline(
-        matchId: number, 
-        region: Regions = RegionManager.getInstance().getRegion()
+        matchId: number,
+        region: Regions = RegionManager.getInstance().getRegion(),
     ) {
-        return new Promise((resolve, reject) => {  
-            let url = methods.TIMELINES.BY_MATCH_ID.VALUE;
-            
+        return new Promise((resolve, reject) => {
+            const url = methods.TIMELINES.BY_MATCH_ID.VALUE;
+
             RequestManager.getInstance().getDynamicData(url, {matchId}, region)
             .then((data) => {
                 resolve(JSON.parse(data));
             })
             .catch((err) => {
                 reject(err);
-            })
+            });
         });
     }
-    
+
 }
