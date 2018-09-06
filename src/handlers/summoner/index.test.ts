@@ -1,5 +1,5 @@
 import "mocha";
-import { SummonerMethods } from ".";
+import { SummonerMethods } from "./";
 import { JarvanScript } from "../..";
 import { Regions } from "../../models";
 

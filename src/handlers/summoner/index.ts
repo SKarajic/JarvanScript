@@ -1,6 +1,6 @@
 import { JarvanScript } from "../..";
 import { Methods, RegionManager, Regions, RequestManager } from "../../models";
-import { Summoner } from "./classes";
+import { Summoner } from "./dto";
 
 const methods = Methods.SUMMONER;
 

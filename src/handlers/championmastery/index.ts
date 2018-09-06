@@ -1,6 +1,6 @@
 import JarvanScript from "../../jarvanscript";
 import { Methods, RegionManager, Regions, RequestManager } from "../../models";
-import { ChampionMastery } from "./classes";
+import { ChampionMastery } from "./dto";
 
 const methods = Methods.CHAMPION_MASTERY;
 const reqManager = RequestManager.getInstance();

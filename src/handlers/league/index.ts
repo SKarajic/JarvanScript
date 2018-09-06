@@ -1,6 +1,6 @@
 import { JarvanScript } from "../..";
 import { Methods, Queues, RegionManager, Regions, RequestManager } from "../../models";
-import { LeagueList, LeaguePosition } from "./classes";
+import { LeagueList, LeaguePosition } from "./dto";
 
 const methods = Methods.LEAGUE;
 const regManager = RegionManager.getInstance();

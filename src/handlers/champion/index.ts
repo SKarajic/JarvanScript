@@ -1,6 +1,6 @@
 import JarvanScript from "../../jarvanscript";
 import { Methods, RegionManager, Regions, RequestManager } from "../../models";
-import { ChampionInfo } from "./classes";
+import { ChampionInfo } from "./dto";
 const methods = Methods.CHAMPION;
 const reqManager = RequestManager.getInstance();
 const regManager = RegionManager.getInstance();

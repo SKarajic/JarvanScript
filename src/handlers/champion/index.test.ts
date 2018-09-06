@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import { ChampionMethods } from ".";
+import { ChampionMethods } from "./";
 import { Regions } from "../../models";
 
 import dotenv = require("dotenv");
