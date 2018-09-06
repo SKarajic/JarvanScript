@@ -17,7 +17,7 @@ describe("ChampionMethods", () => {
     const cil = await ChampionMethods.getChampions();
     expect(cil[0].id).to.be.a("number");
   });
-  
+
   it("should get data of champion with id 7", async () => {
     const cil = await ChampionMethods.getChampions(7);
     expect(cil[0].id).to.be.a("number");

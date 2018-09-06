@@ -4,7 +4,7 @@ import { RegionManager, RequestManager } from "../../managers";
 const methods = Methods.SPECTATOR;
 
 export namespace SpectateMethods {
-  
+
   /**
    * Gain spectating data of a summoner.
    * @param summonerId
@@ -25,7 +25,7 @@ export namespace SpectateMethods {
         });
     });
   }
-    
+
   /**
    * Get all featured matches.
    * @param region
@@ -45,4 +45,3 @@ export namespace SpectateMethods {
     });
   }
 }
-    

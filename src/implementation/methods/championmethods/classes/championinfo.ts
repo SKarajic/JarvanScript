@@ -8,7 +8,7 @@ export default class ChampionInfo extends AbstractMethodClass {
   public active: boolean;
   public freeToPlay: boolean;
   public id: number;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -19,7 +19,7 @@ export default class ChampionInfo extends AbstractMethodClass {
       freeToPlay,
       id,
     } = requestObject;
-    
+
     this.rankedEnabled = rankedPlayEnabled;
     this.customBotEnabled = botEnabled;
     this.coopBotEnabled = botMmEnabled;

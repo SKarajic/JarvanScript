@@ -17,7 +17,7 @@ export default class LeaguePosition extends AbstractMethodClass {
   public playerOrTeamId: string;
   public tier: string;
   public leaguePoints: number;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -36,7 +36,7 @@ export default class LeaguePosition extends AbstractMethodClass {
       tier,
       leaguePoints,
     } = requestObject;
-    
+
     this.rank = rank;
     this.queueType = queueType;
     this.hotStreak = hotStreak;

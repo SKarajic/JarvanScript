@@ -1,5 +1,4 @@
 import { Methods, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 const methods = Methods.SUMMONER;
 
@@ -19,7 +18,7 @@ export namespace SummonerMethods {
         });
     });
   }
-    
+
   export function getSummonerById(
     summonerId: number,
     region: Regions = RegionManager.getInstance().getRegion(),
@@ -35,7 +34,7 @@ export namespace SummonerMethods {
         });
     });
   }
-      
+
   export function getSummonerByName(
     summonerName: string,
     region: Regions = RegionManager.getInstance().getRegion(),
@@ -52,4 +51,3 @@ export namespace SummonerMethods {
     });
   }
 }
-      

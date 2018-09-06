@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import "mocha";
 import { SummonerMethods } from ".";
 import { Regions } from "../../../enums/";
@@ -19,14 +18,14 @@ describe("SummonerMethods", () => {
       done();
     });
   });
-  
+
   it("should get summoner by summoner id", (done) => {
     SummonerMethods.getSummonerById(69658457)
     .then((data) => {
       done();
     });
   });
-  
+
   it("should get summoner by summoner name", (done) => {
     SummonerMethods.getSummonerByName("IAmTheWhite")
     .then((data) => {

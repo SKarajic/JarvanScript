@@ -6,7 +6,7 @@ const regManager = RegionManager.getInstance();
 const reqManager = RequestManager.getInstance();
 
 export namespace LeagueMethods {
-  
+
   /**
    * Returns the challenger league.
    * @param queue the type of ranked queue
@@ -18,13 +18,13 @@ export namespace LeagueMethods {
   ): Promise<LeagueList>  {
     const url = methods.CHALLENGER_LEAGUES.BY_QUEUE.VALUE;
     let validQueue = false;
-    
+
     for (const key in Queues) {
       if (Queues[key] === queue) {
         validQueue = true;
       }
     }
-    
+
     if (validQueue) {
       const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
       return new LeagueList(data, region);
@@ -32,7 +32,7 @@ export namespace LeagueMethods {
       throw new Error(queue + " is not a valid queue");
     }
   }
-    
+
   /**
    * Returns the master league.
    * @param queue the type of ranked queue
@@ -44,13 +44,13 @@ export namespace LeagueMethods {
   ): Promise<LeagueList> {
     const url = methods.MASTER_LEAGUES.BY_QUEUE.VALUE;
     let validQueue = false;
-    
+
     for (const key in Queues) {
       if (Queues[key] === queue) {
         validQueue = true;
       }
     }
-    
+
     if (validQueue) {
       const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
       return new LeagueList(data, region);
@@ -58,7 +58,7 @@ export namespace LeagueMethods {
       throw new Error(queue + " is not a valid queue");
     }
   }
-      
+
   /**
    * Gets all the ranks of a summoner.
    * @param summonerId the ID of the summoner
@@ -76,7 +76,7 @@ export namespace LeagueMethods {
     });
     return positionList;
   }
-        
+
   export async function getLeague(
     leagueId: string,
     region: Regions = regManager.getRegion(),
@@ -86,4 +86,3 @@ export namespace LeagueMethods {
     return new LeagueList(data, region);
   }
 }
-        

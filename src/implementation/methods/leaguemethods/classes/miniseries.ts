@@ -6,7 +6,7 @@ export default class MiniSeries extends AbstractMethodClass {
   public losses: number;
   public target: number;
   public progress: string;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -15,7 +15,7 @@ export default class MiniSeries extends AbstractMethodClass {
       target,
       progress,
     } = requestObject;
-    
+
     this.wins = wins;
     this.losses = losses;
     this.target = target;

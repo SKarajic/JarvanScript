@@ -10,7 +10,7 @@ export default class ChampionMastery extends AbstractMethodClass {
   public pointsUntilNextLevel: number;
   public pointsSinceLastLevel: number;
   public lastPlayTime: number;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -23,7 +23,7 @@ export default class ChampionMastery extends AbstractMethodClass {
       championPointsSinceLastLevel,
       lastPlayTime,
     } = requestObject;
-    
+
     this.pointsUntilNextLevel = championPointsUntilNextLevel;
     this.pointsSinceLastLevel = championPointsSinceLastLevel;
     this.lastPlayTime = lastPlayTime;

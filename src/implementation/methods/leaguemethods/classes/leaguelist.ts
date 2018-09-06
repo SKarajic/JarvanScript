@@ -8,7 +8,7 @@ export default class LeagueList extends AbstractMethodClass {
   public entries:	LeagueItem[];
   public queue: string;
   public name: string;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -18,7 +18,7 @@ export default class LeagueList extends AbstractMethodClass {
       queue,
       name,
     } = requestObject;
-    
+
     const objectEntries: LeagueItem[] = [];
     entries.forEach((entry: any) => {
       objectEntries.push(new LeagueItem(entry, region));

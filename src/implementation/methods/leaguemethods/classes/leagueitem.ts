@@ -14,7 +14,7 @@ export default class LeagueItem extends AbstractMethodClass {
   public inactive: boolean;
   public playerOrTeamId: string;
   public leaguePoints: number;
-  
+
   constructor(requestObject: any, region: Regions) {
     super(region);
     const {
@@ -30,7 +30,7 @@ export default class LeagueItem extends AbstractMethodClass {
       playerOrTeamId,
       leaguePoints,
     } = requestObject;
-    
+
     this.rank = rank;
     this.hotStreak = hotStreak;
     this.miniSeries = miniSeries !== undefined ? new MiniSeries(miniSeries, region) : null;

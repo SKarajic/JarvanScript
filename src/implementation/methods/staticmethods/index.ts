@@ -10,5 +10,5 @@ export namespace StaticMethods {
   export function getRunes(runeId?: number): any { return null; }
   export function getSummonerSpell(summonerSpellId?: number): any { return null; }
   export function getVersions(): any { return null; }
-  
+
 }

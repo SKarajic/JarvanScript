@@ -19,7 +19,7 @@ describe("SpectateMethods", () => {
       done();
     });
   });
-  
+
   it("should get featured matches", (done) => {
     SpectateMethods.featuredMatches()
     .then((data) => {

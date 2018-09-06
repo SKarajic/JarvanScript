@@ -18,7 +18,7 @@ export namespace MatchMethods {
         });
     });
   }
-    
+
   export function getMatchInfo(
     matchId: number,
     tournamentCode?: any,
@@ -38,7 +38,7 @@ export namespace MatchMethods {
         });
     });
   }
-      
+
   export function getTournamentMatchIds(
     tournamentCode: any,
     region: Regions = RegionManager.getInstance().getRegion(),
@@ -54,7 +54,7 @@ export namespace MatchMethods {
         });
     });
   }
-        
+
   export function getMatchTimeline(
     matchId: number,
     region: Regions = RegionManager.getInstance().getRegion(),
@@ -71,4 +71,3 @@ export namespace MatchMethods {
     });
   }
 }
-        

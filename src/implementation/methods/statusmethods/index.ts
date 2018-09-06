@@ -1,5 +1,4 @@
 import { Methods, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 const methods = Methods.STATUS;
 
@@ -19,4 +18,3 @@ export namespace StatusMethods {
     });
   }
 }
-  

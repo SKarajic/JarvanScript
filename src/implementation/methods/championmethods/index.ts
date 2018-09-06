@@ -7,7 +7,7 @@ const reqManager = RequestManager.getInstance();
 const regManager = RegionManager.getInstance();
 
 export namespace ChampionMethods {
-  
+
   /**
    * Returns information of one or all champions.
    * @param championId the ID of the champion (optional)
@@ -33,4 +33,3 @@ export namespace ChampionMethods {
     return championList;
   }
 }
-  

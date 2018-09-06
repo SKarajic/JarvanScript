@@ -6,7 +6,7 @@ const reqManager = RequestManager.getInstance();
 const regManager = RegionManager.getInstance();
 
 export namespace ChampionMasteryMethods {
-  
+
   /**
    * Returns one or all Champion Masteries of a summoner.
    * @param summonerId the ID of the summoner
@@ -33,7 +33,7 @@ export namespace ChampionMasteryMethods {
     }
     return championMasteryList;
   }
-    
+
   /**
    * Returns the combined level of all the Champion Masteries of a summoner
    * @param summonerId the ID of the summoner
@@ -47,4 +47,3 @@ export namespace ChampionMasteryMethods {
     return parseInt(await RequestManager.getInstance().getDynamicData(url, {summonerId}, region), undefined);
   }
 }
-    
