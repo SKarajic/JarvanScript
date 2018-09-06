@@ -1,4 +1,4 @@
-import { Queues } from "../enums";
+import { Queues } from "../models/enums";
 
 export interface IRequestInfo {
   accountId?: number;
