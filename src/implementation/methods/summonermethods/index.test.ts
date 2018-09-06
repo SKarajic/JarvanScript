@@ -4,7 +4,8 @@ import { SummonerMethods } from ".";
 import { Regions } from "../../../enums/";
 import { KeyManager, RegionManager } from "../../managers";
 
-require("dotenv").config();
+import dotenv = require("dotenv");
+dotenv.config();
 
 beforeEach(() => {
     RegionManager.getInstance().setRegion(Regions.EUW);

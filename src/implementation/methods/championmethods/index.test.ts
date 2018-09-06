@@ -4,7 +4,8 @@ import { ChampionMethods } from ".";
 import { Regions } from "../../../enums/";
 import { KeyManager, RegionManager } from "../../managers";
 
-require("dotenv").config();
+import dotenv = require("dotenv");
+dotenv.config();
 
 beforeEach(() => {
     RegionManager.getInstance().setRegion(Regions.EUW);
@@ -13,20 +14,12 @@ beforeEach(() => {
 
 describe("ChampionMethods", () => {
     it("should get data of all champions", async () => {
-        try {
-            const cil = await ChampionMethods.getChampions();
-            expect(cil[0].id).to.be.a("number");
-        } catch (err) {
-            console.log(err);
-        }
+        const cil = await ChampionMethods.getChampions();
+        expect(cil[0].id).to.be.a("number");
     });
 
     it("should get data of champion with id 7", async () => {
-        try {
-            const cil = await ChampionMethods.getChampions(7);
-            expect(cil[0].id).to.be.a("number");
-        } catch (err) {
-            console.log(err);
-        }
+        const cil = await ChampionMethods.getChampions(7);
+        expect(cil[0].id).to.be.a("number");
     });
 });

@@ -1,5 +1,4 @@
 import { Methods, Queues, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 const methods = Methods.MATCH;
 
@@ -27,7 +26,7 @@ export namespace MatchMethods {
     ) {
         return new Promise((resolve, reject) => {
             let url = methods.MATCHES.BY_MATCH_ID.VALUE;
-            if (tournamentCode != void 0) {
+            if (tournamentCode !== void 0) {
                 url = methods.MATCHES.BY_MATCH_ID.BY_TOURNAMENT_CODE.VALUE;
             }
             RequestManager.getInstance().getDynamicData(url, {matchId, tournamentCode}, region)

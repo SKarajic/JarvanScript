@@ -40,7 +40,7 @@ export default class LeaguePosition extends AbstractMethodClass {
         this.rank = rank;
         this.queueType = queueType;
         this.hotStreak = hotStreak;
-        this.miniSeries = miniSeries != undefined ? new MiniSeries(miniSeries, region) : null;
+        this.miniSeries = miniSeries !== undefined ? new MiniSeries(miniSeries, region) : null;
         this.wins = wins;
         this.veteran = veteran;
         this.losses = losses;

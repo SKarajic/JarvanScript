@@ -4,7 +4,8 @@ import { StatusMethods } from ".";
 import { Regions } from "../../../enums/";
 import { KeyManager, RegionManager } from "../../managers";
 
-require("dotenv").config();
+import dotenv = require("dotenv");
+dotenv.config();
 
 beforeEach(() => {
     RegionManager.getInstance().setRegion(Regions.EUW);
@@ -16,7 +17,6 @@ describe("StatusMethods", () => {
         StatusMethods.getStatus()
             .then((data) => {
                 done();
-            })
-            .catch((err) => console.log(err));
+            });
     });
 });

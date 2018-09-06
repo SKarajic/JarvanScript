@@ -1,5 +1,4 @@
 import { Methods, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 import { ChampionMastery } from "./classes";
 const methods = Methods.CHAMPION_MASTERY;
@@ -20,7 +19,7 @@ export namespace ChampionMasteryMethods {
         region: Regions = regManager.getRegion(),
     ): Promise<ChampionMastery[]> {
         let url;
-        if (championId != void 0) {
+        if (championId !== void 0) {
             url = methods.CHAMPION_MASTERIES.BY_SUMMONER_ID.BY_CHAMPION_ID.VALUE;
         } else {
             url = methods.CHAMPION_MASTERIES.BY_SUMMONER_ID.VALUE;
@@ -45,6 +44,6 @@ export namespace ChampionMasteryMethods {
         region: Regions = RegionManager.getInstance().getRegion(),
     ): Promise<number> {
         const url = methods.SCORES.BY_SUMMONER_ID.VALUE;
-        return parseInt(await RequestManager.getInstance().getDynamicData(url, {summonerId}, region));
+        return parseInt(await RequestManager.getInstance().getDynamicData(url, {summonerId}, region), undefined);
     }
 }

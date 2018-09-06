@@ -1,8 +1,8 @@
+import request = require("request");
 import { Regions } from "../../../enums";
 import { IRequestInfo } from "../../../interfaces";
 import { KeyManager } from "../keymanager";
 import { RegionManager } from "../regionmanager";
-const request = require("request");
 
 export class RequestManager {
 
@@ -10,23 +10,23 @@ export class RequestManager {
      * Gets the RequestManager singleton instance.
      */
     public static getInstance(): RequestManager {
-        return RequestManager._instance;
+        return RequestManager.instance;
     }
 
-    private static _instance: RequestManager = new RequestManager();
+    private static instance: RequestManager = new RequestManager();
 
     /**
      * Instantiates the RequestManager singleton if it doesn't exist, else
      * it throw an error telling to use the getInstance() method instead.
      */
     constructor() {
-        if (RequestManager._instance) {
+        if (RequestManager.instance) {
             throw new Error(
                 "Instantiation failed: Use the " +
                 "getInstance() method instead of new.",
             );
         }
-        RequestManager._instance = this;
+        RequestManager.instance = this;
     }
 
     public getDynamicData(
@@ -43,10 +43,10 @@ export class RequestManager {
             }
 
             const options = {
-                url,
                 headers: {
                     "X-Riot-Token": KeyManager.getInstance().getKey(),
                 },
+                url,
             };
 
             request(options, (error: any, response: any, body: any) => {

@@ -18,7 +18,7 @@ export namespace ChampionMethods {
         region: Regions = regManager.getRegion(),
     ): Promise<ChampionInfo[]> {
         let url;
-        if (championId != void 0) {
+        if (championId !== void 0) {
             url = methods.BY_CHAMPION_ID.VALUE;
         } else {
             url = methods.VALUE;

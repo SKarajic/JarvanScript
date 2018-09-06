@@ -1,5 +1,4 @@
 import { Methods, Queues, Regions } from "../../../enums";
-import { IRequestInfo } from "../../../interfaces";
 import { RegionManager, RequestManager } from "../../managers";
 import { LeagueList, LeaguePosition } from "./classes";
 const methods = Methods.LEAGUE;
@@ -21,7 +20,7 @@ export namespace LeagueMethods {
         let validQueue = false;
 
         for (const key in Queues) {
-            if (Queues[key] == queue) {
+            if (Queues[key] === queue) {
                 validQueue = true;
             }
         }
@@ -47,7 +46,7 @@ export namespace LeagueMethods {
         let validQueue = false;
 
         for (const key in Queues) {
-            if (Queues[key] == queue) {
+            if (Queues[key] === queue) {
                 validQueue = true;
             }
         }

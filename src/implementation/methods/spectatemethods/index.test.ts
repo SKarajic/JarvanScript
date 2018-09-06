@@ -4,7 +4,8 @@ import { SpectateMethods } from ".";
 import { Regions } from "../../../enums/";
 import { KeyManager, RegionManager } from "../../managers";
 
-require("dotenv").config();
+import dotenv = require("dotenv");
+dotenv.config();
 
 beforeEach(() => {
     RegionManager.getInstance().setRegion(Regions.EUW);
@@ -16,15 +17,13 @@ describe("SpectateMethods", () => {
         SpectateMethods.spectateMatch(69658457)
             .then((data) => {
                 done();
-            })
-            .catch((err) => console.log(err));
+            });
     });
 
     it("should get featured matches", (done) => {
         SpectateMethods.featuredMatches()
             .then((data) => {
                 done();
-            })
-            .catch((err) => console.log(err));
+            });
     });
 });

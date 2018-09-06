@@ -45,7 +45,7 @@ export class RegionManager {
      */
     public setRegion(region: Regions|string): void {
         for (const key in Regions) {
-            if (Regions[key] == region) {
+            if (Regions[key] === region) {
                 this.region = Regions[key] as Regions;
                 return;
             }
