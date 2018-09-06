@@ -1,9 +1,10 @@
 import request = require("request");
+import { KeyManager, RegionManager, Regions } from "../..";
 import { IRequestInfo } from "../../../interfaces";
-import { Regions } from "../../../models/enums";
-import { KeyManager } from "../keymanager";
-import { RegionManager } from "../regionmanager";
 
+/**
+ * A manager that manages the requests and rate limits
+ */
 export class RequestManager {
 
   /**

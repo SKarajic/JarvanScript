@@ -1,6 +1,6 @@
+import { JarvanScript } from "../..";
 import { ChampionInfo, ChampionMethods } from "../../handlers";
-import JarvanScript from "../../jarvanscript";
-import { Regions } from "../../models/enums";
+import { Regions } from "../../models";
 
 /**
  * Champion Wrapper

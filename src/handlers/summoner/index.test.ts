@@ -1,7 +1,7 @@
 import "mocha";
 import { SummonerMethods } from ".";
-import JarvanScript from "../../jarvanscript";
-import { Regions } from "../../models/enums";
+import { JarvanScript } from "../..";
+import { Regions } from "../../models";
 
 import dotenv = require("dotenv");
 dotenv.config();

@@ -1,5 +1,8 @@
-import { Regions } from "../../../models/enums";
+import { Regions } from "../..";
 
+/**
+ * A manager that manages the region
+ */
 export class RegionManager {
 
   /**

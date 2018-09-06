@@ -1,6 +1,6 @@
+import { JarvanScript } from "../..";
 import { LeagueList, LeagueMethods, LeaguePosition } from "../../handlers";
-import JarvanScript from "../../jarvanscript";
-import { Queues, Regions } from "../../models/enums";
+import { Queues, Regions } from "../../models";
 
 /**
  * League Wrapper

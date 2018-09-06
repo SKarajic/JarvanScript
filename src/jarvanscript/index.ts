@@ -3,8 +3,7 @@ import {
   SpectateMethods,
   StaticMethods,
 } from "../handlers";
-import { Regions } from "../models/enums";
-import { KeyManager, RegionManager } from "../models/managers";
+import { KeyManager, RegionManager, Regions } from "../models";
 import {
   ChampionMasteryWrapper,
   ChampionWrapper,

@@ -1,7 +1,7 @@
-import JarvanScript from "../../jarvanscript";
-import { Methods, Queues, Regions } from "../../models/enums";
-import { RegionManager, RequestManager } from "../../models/managers";
+import { JarvanScript } from "../..";
+import { Methods, Queues, RegionManager, Regions, RequestManager } from "../../models";
 import { LeagueList, LeaguePosition } from "./classes";
+
 const methods = Methods.LEAGUE;
 const regManager = RegionManager.getInstance();
 const reqManager = RequestManager.getInstance();

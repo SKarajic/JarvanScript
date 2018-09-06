@@ -1,6 +1,5 @@
-import JarvanScript from "../../jarvanscript";
-import { Methods, Regions } from "../../models/enums";
-import { RegionManager, RequestManager } from "../../models/managers";
+import { JarvanScript } from "../..";
+import { Methods, RegionManager, Regions, RequestManager } from "../../models";
 import { Summoner } from "./classes";
 
 const methods = Methods.SUMMONER;

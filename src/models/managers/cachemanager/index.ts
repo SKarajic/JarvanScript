@@ -1,3 +1,6 @@
+/**
+ * A manager that manages the cache from requests
+ */
 export class CacheManager {
 
   /**

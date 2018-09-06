@@ -1,6 +1,6 @@
+import { JarvanScript } from "../..";
 import { Summoner, SummonerMethods } from "../../handlers";
-import JarvanScript from "../../jarvanscript";
-import { Regions } from "../../models/enums";
+import { Regions } from "../../models";
 
 /**
  * Summoner Wrapper

@@ -1,5 +1,4 @@
-import { Methods, Queues, Regions } from "../../models/enums";
-import { RegionManager, RequestManager } from "../../models/managers";
+import { Methods, RegionManager, Regions, RequestManager } from "../../models";
 const methods = Methods.MATCH;
 
 export namespace MatchMethods {

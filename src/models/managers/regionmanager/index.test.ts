@@ -1,7 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import { RegionManager } from ".";
-import { Regions } from "../../../models/enums";
+import { RegionManager, Regions } from "../..";
 
 describe("RegionManager", () => {
   it("should return an instance", () => {

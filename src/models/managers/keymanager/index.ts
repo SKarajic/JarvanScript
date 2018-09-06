@@ -1,3 +1,6 @@
+/**
+ * An API key manager
+ */
 export class KeyManager {
 
   /**

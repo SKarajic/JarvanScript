@@ -1,8 +1,6 @@
-import { expect } from "chai";
 import "mocha";
 import { MatchMethods } from ".";
-import { Regions } from "../../models/enums";
-import { KeyManager, RegionManager } from "../../models/managers";
+import { KeyManager, RegionManager, Regions } from "../../models";
 
 import dotenv = require("dotenv");
 dotenv.config();
