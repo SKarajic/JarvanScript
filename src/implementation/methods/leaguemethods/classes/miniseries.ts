@@ -1,4 +1,5 @@
 import { Regions } from "../../../../enums";
+import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
 
 export default class MiniSeries extends AbstractMethodClass {
@@ -7,8 +8,8 @@ export default class MiniSeries extends AbstractMethodClass {
   public target: number;
   public progress: string;
 
-  constructor(requestObject: any, region: Regions) {
-    super(region);
+  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+    super(region, wrapper);
     const {
       wins,
       losses,

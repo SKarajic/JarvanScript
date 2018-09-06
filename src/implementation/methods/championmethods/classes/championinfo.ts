@@ -1,4 +1,5 @@
 import { Regions } from "../../../../enums";
+import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
 
 export default class ChampionInfo extends AbstractMethodClass {
@@ -9,8 +10,8 @@ export default class ChampionInfo extends AbstractMethodClass {
   public freeToPlay: boolean;
   public id: number;
 
-  constructor(requestObject: any, region: Regions) {
-    super(region);
+  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+    super(region, wrapper);
     const {
       rankedPlayEnabled,
       botEnabled,

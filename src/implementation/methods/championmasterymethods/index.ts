@@ -1,6 +1,8 @@
 import { Methods, Regions } from "../../../enums";
+import JarvanScript from "../../jarvanscript";
 import { RegionManager, RequestManager } from "../../managers";
 import { ChampionMastery } from "./classes";
+
 const methods = Methods.CHAMPION_MASTERY;
 const reqManager = RequestManager.getInstance();
 const regManager = RegionManager.getInstance();
@@ -14,6 +16,7 @@ export namespace ChampionMasteryMethods {
    * @param region the region of choice (optional)
    */
   export async function getChampionMasteries(
+    wrapper: JarvanScript,
     summonerId: number,
     championId?: number,
     region: Regions = regManager.getRegion(),
@@ -27,9 +30,9 @@ export namespace ChampionMasteryMethods {
     const data = JSON.parse(await reqManager.getDynamicData(url, {summonerId, championId}, region));
     const championMasteryList: ChampionMastery[] = [];
     if (Array.isArray(data)) {
-      data.forEach((element) => championMasteryList.push(new ChampionMastery(element, region)));
+      data.forEach((element) => championMasteryList.push(new ChampionMastery(element, region, wrapper)));
     } else {
-      championMasteryList.push(new ChampionMastery(data, region));
+      championMasteryList.push(new ChampionMastery(data, region, wrapper));
     }
     return championMasteryList;
   }
@@ -44,6 +47,9 @@ export namespace ChampionMasteryMethods {
     region: Regions = RegionManager.getInstance().getRegion(),
   ): Promise<number> {
     const url = methods.SCORES.BY_SUMMONER_ID.VALUE;
-    return parseInt(await RequestManager.getInstance().getDynamicData(url, {summonerId}, region), undefined);
+    return parseInt(
+      await RequestManager.getInstance().getDynamicData(
+        url, {summonerId}, region),
+        undefined);
   }
 }

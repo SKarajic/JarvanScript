@@ -1,4 +1,5 @@
 import { Methods, Regions } from "../../../enums";
+import JarvanScript from "../../jarvanscript";
 import { RegionManager, RequestManager } from "../../managers";
 import { ChampionInfo } from "./classes";
 const methods = Methods.CHAMPION;
@@ -13,6 +14,7 @@ export namespace ChampionMethods {
    * @param region the region of choice (optional)
    */
   export async function getChampions(
+    wrapper: JarvanScript,
     championId?: number,
     region: Regions = regManager.getRegion(),
   ): Promise<ChampionInfo[]> {
@@ -25,9 +27,9 @@ export namespace ChampionMethods {
     const data = JSON.parse(await reqManager.getDynamicData(url, {championId}, region));
     const championList: ChampionInfo[] = [];
     if (data.champions) {
-      data.champions.forEach((element: any) => championList.push(new ChampionInfo(element, region)));
+      data.champions.forEach((element: any) => championList.push(new ChampionInfo(element, region, wrapper)));
     } else {
-      championList.push(new ChampionInfo(data, region));
+      championList.push(new ChampionInfo(data, region, wrapper));
     }
     return championList;
   }

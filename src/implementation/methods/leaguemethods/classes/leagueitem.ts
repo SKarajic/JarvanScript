@@ -1,4 +1,5 @@
 import { Regions } from "../../../../enums";
+import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
 import MiniSeries from "./miniseries";
 
@@ -15,8 +16,8 @@ export default class LeagueItem extends AbstractMethodClass {
   public playerOrTeamId: string;
   public leaguePoints: number;
 
-  constructor(requestObject: any, region: Regions) {
-    super(region);
+  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+    super(region, wrapper);
     const {
       rank,
       hotStreak,
@@ -33,7 +34,7 @@ export default class LeagueItem extends AbstractMethodClass {
 
     this.rank = rank;
     this.hotStreak = hotStreak;
-    this.miniSeries = miniSeries !== undefined ? new MiniSeries(miniSeries, region) : null;
+    this.miniSeries = miniSeries !== undefined ? new MiniSeries(miniSeries, region, this.wrapper) : null;
     this.wins = wins;
     this.veteran = veteran;
     this.losses = losses;

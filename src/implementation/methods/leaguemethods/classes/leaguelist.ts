@@ -1,4 +1,5 @@
 import { Regions } from "../../../../enums";
+import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
 import LeagueItem from "./leagueitem";
 
@@ -9,8 +10,8 @@ export default class LeagueList extends AbstractMethodClass {
   public queue: string;
   public name: string;
 
-  constructor(requestObject: any, region: Regions) {
-    super(region);
+  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+    super(region, wrapper);
     const {
       pleagueId,
       tier,
@@ -21,7 +22,7 @@ export default class LeagueList extends AbstractMethodClass {
 
     const objectEntries: LeagueItem[] = [];
     entries.forEach((entry: any) => {
-      objectEntries.push(new LeagueItem(entry, region));
+      objectEntries.push(new LeagueItem(entry, region, this.wrapper));
     });
     this.leagueId = pleagueId;
     this.tier = tier;

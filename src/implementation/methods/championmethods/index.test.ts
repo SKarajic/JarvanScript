@@ -5,21 +5,19 @@ import { Regions } from "../../../enums/";
 import { KeyManager, RegionManager } from "../../managers";
 
 import dotenv = require("dotenv");
+import JarvanScript from "../../jarvanscript";
 dotenv.config();
 
-beforeEach(() => {
-  RegionManager.getInstance().setRegion(Regions.EUW);
-  KeyManager.getInstance().setKey(process.env.RIOT_API_KEY as string);
-});
+const wrapper = new JarvanScript(process.env.RIOT_API_KEY as string, Regions.EUW, {});
 
 describe("ChampionMethods", () => {
   it("should get data of all champions", async () => {
-    const cil = await ChampionMethods.getChampions();
+    const cil = await ChampionMethods.getChampions(wrapper);
     expect(cil[0].id).to.be.a("number");
   });
 
   it("should get data of champion with id 7", async () => {
-    const cil = await ChampionMethods.getChampions(7);
+    const cil = await ChampionMethods.getChampions(wrapper, 7);
     expect(cil[0].id).to.be.a("number");
   });
 });

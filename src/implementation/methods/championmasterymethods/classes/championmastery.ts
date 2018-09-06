@@ -1,18 +1,30 @@
 import { Regions } from "../../../../enums";
+import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
+import { ChampionInfo } from "../../championmethods/classes";
 
+/**
+ * Summoner's mastery in a Champion
+ */
 export default class ChampionMastery extends AbstractMethodClass {
-  public chestGranted: boolean;
-  public level: number;
-  public points: number;
-  public id: number;
-  public summonerId: number;
-  public pointsUntilNextLevel: number;
-  public pointsSinceLastLevel: number;
-  public lastPlayTime: number;
+  public readonly chestGranted: boolean;
+  public readonly level: number;
+  public readonly points: number;
+  public readonly id: number;
+  public readonly summonerId: number;
+  public readonly pointsUntilNextLevel: number;
+  public readonly pointsSinceLastLevel: number;
+  public readonly lastPlayTime: number;
 
-  constructor(requestObject: any, region: Regions) {
-    super(region);
+  /**
+   * creates a ChampionMastery object
+   *
+   * @param requestObject
+   * @param region
+   * @param wrapper
+   */
+  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+    super(region, wrapper);
     const {
       chestGranted,
       championLevel,
@@ -32,5 +44,19 @@ export default class ChampionMastery extends AbstractMethodClass {
     this.summonerId = playerId;
     this.level = championLevel;
     this.id = championId;
+  }
+
+  /**
+   * gets the ChampionInfo from the ChampionMastery
+   */
+  public async getChampionInfo(): Promise<ChampionInfo> {
+    return (await this.wrapper.champion.getChampions(this.id))[0];
+  }
+
+  /**
+   * gets the Summoner from the ChampionMastery
+   */
+  public async getSummoner(): Promise<any> {
+    return (await this.wrapper.summoner.getSummonerById(this.summonerId));
   }
 }

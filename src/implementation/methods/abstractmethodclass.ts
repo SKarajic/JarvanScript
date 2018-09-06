@@ -1,11 +1,14 @@
 import { Regions } from "../../enums";
+import JarvanScript from "../jarvanscript";
 
 export abstract class AbstractMethodClass {
 
-  protected region: Regions;
+  protected readonly region: Regions;
+  protected readonly wrapper: JarvanScript;
 
-  constructor(region: any) {
+  constructor(region: Regions | string, wrapper: JarvanScript) {
     this.region = region as Regions;
+    this.wrapper = wrapper;
   }
 
   public toJSON() {

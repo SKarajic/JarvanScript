@@ -1,4 +1,5 @@
 import { Methods, Queues, Regions } from "../../../enums";
+import JarvanScript from "../../jarvanscript";
 import { RegionManager, RequestManager } from "../../managers";
 import { LeagueList, LeaguePosition } from "./classes";
 const methods = Methods.LEAGUE;
@@ -9,10 +10,13 @@ export namespace LeagueMethods {
 
   /**
    * Returns the challenger league.
-   * @param queue the type of ranked queue
-   * @param region the region of choice (optional)
+   *
+   * @param wrapper - the wrapper
+   * @param queue - the type of ranked queue
+   * @param region - (optional) the region of choice
    */
   export async function getChallengerLeague(
+    wrapper: JarvanScript,
     queue: string,
     region: Regions = regManager.getRegion(),
   ): Promise<LeagueList>  {
@@ -27,7 +31,7 @@ export namespace LeagueMethods {
 
     if (validQueue) {
       const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
-      return new LeagueList(data, region);
+      return new LeagueList(data, region, wrapper);
     } else {
       throw new Error(queue + " is not a valid queue");
     }
@@ -35,10 +39,13 @@ export namespace LeagueMethods {
 
   /**
    * Returns the master league.
-   * @param queue the type of ranked queue
-   * @param region the region of choice (optional)
+   *
+   * @param wrapper - the wrapper
+   * @param queue - the type of ranked queue
+   * @param region - (optional) the region of choice
    */
   export async function getMasterLeague(
+    wrapper: JarvanScript,
     queue: string,
     region: Regions = regManager.getRegion(),
   ): Promise<LeagueList> {
@@ -53,7 +60,7 @@ export namespace LeagueMethods {
 
     if (validQueue) {
       const data = JSON.parse(await reqManager.getDynamicData(url, {queue}, region));
-      return new LeagueList(data, region);
+      return new LeagueList(data, region, wrapper);
     } else {
       throw new Error(queue + " is not a valid queue");
     }
@@ -61,10 +68,13 @@ export namespace LeagueMethods {
 
   /**
    * Gets all the ranks of a summoner.
-   * @param summonerId the ID of the summoner
-   * @param region the region of choice (optional)
+   *
+   * @param wrapper - the wrapper
+   * @param summonerId - the ID of the summoner
+   * @param region - (optional) the region of choice
    */
   export async function getRanks(
+    wrapper: JarvanScript,
     summonerId: number,
     region: Regions = regManager.getRegion(),
   ): Promise<LeaguePosition[]> {
@@ -72,17 +82,25 @@ export namespace LeagueMethods {
     const data = JSON.parse(await reqManager.getDynamicData(url, {summonerId}, region));
     const positionList: LeaguePosition[] = [];
     data.forEach((element: any) => {
-      positionList.push(new LeaguePosition(element, region));
+      positionList.push(new LeaguePosition(element, region, wrapper));
     });
     return positionList;
   }
 
+  /**
+   * Gets a League
+   *
+   * @param wrapper - the wrapper
+   * @param leagueId - the ID of the league
+   * @param region - (optional) the region of choice
+   */
   export async function getLeague(
+    wrapper: JarvanScript,
     leagueId: string,
     region: Regions = regManager.getRegion(),
   ): Promise<LeagueList> {
     const url = methods.LEAGUES.BY_LEAGUE_ID.VALUE;
     const data = JSON.parse(await reqManager.getDynamicData(url, {leagueId}, region));
-    return new LeagueList(data, region);
+    return new LeagueList(data, region, wrapper);
   }
 }
