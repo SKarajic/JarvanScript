@@ -1,7 +1,7 @@
+import { ChampionInfo, Summoner } from "../..";
 import { Regions } from "../../../../enums";
 import JarvanScript from "../../../jarvanscript";
 import { AbstractMethodClass } from "../../abstractmethodclass";
-import { ChampionInfo } from "../../championmethods/classes";
 
 /**
  * Summoner's mastery in a Champion
@@ -56,7 +56,7 @@ export default class ChampionMastery extends AbstractMethodClass {
   /**
    * gets the Summoner from the ChampionMastery
    */
-  public async getSummoner(): Promise<any> {
+  public async getSummoner(): Promise<Summoner> {
     return (await this.wrapper.summoner.getSummonerById(this.summonerId));
   }
 }

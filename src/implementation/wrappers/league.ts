@@ -3,7 +3,7 @@ import JarvanScript from "../jarvanscript";
 import { LeagueList, LeagueMethods, LeaguePosition } from "../methods";
 
 /**
- * Champion Mastery Wrapper
+ * League Wrapper
  */
 export default class LeagueWrapper {
   private wrapper: JarvanScript;

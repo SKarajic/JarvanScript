@@ -1,53 +1,41 @@
 import { Methods, Regions } from "../../../enums";
+import JarvanScript from "../../jarvanscript";
 import { RegionManager, RequestManager } from "../../managers";
+import { Summoner } from "./classes";
+
 const methods = Methods.SUMMONER;
 
 export namespace SummonerMethods {
-  export function getSummonerByAccountId(
+  export async function getSummonerByAccountId(
+    wrapper: JarvanScript,
     accountId: number,
-    region: Regions = RegionManager.getInstance().getRegion(),
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      const url = methods.BY_ACCOUNT_ID.VALUE;
-      RequestManager.getInstance().getDynamicData(url, {accountId}, region)
-        .then((data) => {
-          resolve(JSON.parse(data));
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    region: Regions = RegionManager.getInstance().getRegion()): Promise<Summoner> {
+    const url = methods.BY_ACCOUNT_ID.VALUE;
+    const data = await RequestManager.getInstance()
+      .getDynamicData(url, {accountId}, region);
+
+    return new Summoner(data, region, wrapper);
   }
 
-  export function getSummonerById(
+  export async function getSummonerById(
+    wrapper: JarvanScript,
     summonerId: number,
-    region: Regions = RegionManager.getInstance().getRegion(),
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      const url = methods.BY_SUMMONER_ID.VALUE;
-      RequestManager.getInstance().getDynamicData(url, {summonerId}, region)
-        .then((data) => {
-          resolve(JSON.parse(data));
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    region: Regions = RegionManager.getInstance().getRegion()): Promise<Summoner> {
+    const url = methods.BY_SUMMONER_ID.VALUE;
+    const data = JSON.parse(await RequestManager.getInstance()
+      .getDynamicData(url, {summonerId}, region));
+
+    return new Summoner(data, region, wrapper);
   }
 
-  export function getSummonerByName(
+  export async function getSummonerByName(
+    wrapper: JarvanScript,
     summonerName: string,
-    region: Regions = RegionManager.getInstance().getRegion(),
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      const url = methods.BY_SUMMONER_NAME.VALUE;
-      RequestManager.getInstance().getDynamicData(url, {summonerName}, region)
-        .then((data) => {
-          resolve(JSON.parse(data));
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    region: Regions = RegionManager.getInstance().getRegion()): Promise<Summoner> {
+    const url = methods.BY_SUMMONER_NAME.VALUE;
+    const data = await RequestManager.getInstance()
+      .getDynamicData(url, {summonerName}, region);
+
+    return new Summoner(data, region, wrapper);
   }
 }

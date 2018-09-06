@@ -4,9 +4,13 @@ import {
   MatchMethods,
   SpectateMethods,
   StaticMethods,
-  SummonerMethods,
 } from "../methods";
-import { ChampionMasteryWrapper, ChampionWrapper, LeagueWrapper } from "../wrappers";
+import {
+  ChampionMasteryWrapper,
+  ChampionWrapper,
+  LeagueWrapper,
+  SummonerWrapper,
+} from "../wrappers";
 
 /**
  * The TypeScript Riot API wrapper
@@ -18,7 +22,7 @@ export default class JarvanScript {
   public match = MatchMethods;
   public spectate = SpectateMethods;
   public static = StaticMethods;
-  public summoner = SummonerMethods;
+  public summoner: SummonerWrapper;
 
   /**
    * creates a new wrapper instance
@@ -33,6 +37,7 @@ export default class JarvanScript {
 
     this.championMastery = new ChampionMasteryWrapper(this);
     this.champion = new ChampionWrapper(this);
+    this.summoner = new SummonerWrapper(this);
     this.league = new LeagueWrapper(this);
   }
 }
