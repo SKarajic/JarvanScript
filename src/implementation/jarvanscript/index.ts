@@ -1,13 +1,12 @@
 import { Regions } from "../../enums";
 import { KeyManager, RegionManager } from "../managers";
 import {
-  LeagueMethods,
   MatchMethods,
   SpectateMethods,
   StaticMethods,
   SummonerMethods,
 } from "../methods";
-import { ChampionMasteryWrapper, ChampionWrapper } from "../wrappers";
+import { ChampionMasteryWrapper, ChampionWrapper, LeagueWrapper } from "../wrappers";
 
 /**
  * The TypeScript Riot API wrapper
@@ -15,7 +14,7 @@ import { ChampionMasteryWrapper, ChampionWrapper } from "../wrappers";
 export default class JarvanScript {
   public championMastery: ChampionMasteryWrapper;
   public champion: ChampionWrapper;
-  public league = LeagueMethods;
+  public league: LeagueWrapper;
   public match = MatchMethods;
   public spectate = SpectateMethods;
   public static = StaticMethods;
@@ -34,5 +33,6 @@ export default class JarvanScript {
 
     this.championMastery = new ChampionMasteryWrapper(this);
     this.champion = new ChampionWrapper(this);
+    this.league = new LeagueWrapper(this);
   }
 }

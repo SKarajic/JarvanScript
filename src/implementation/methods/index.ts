@@ -10,3 +10,5 @@ export { SummonerMethods } from "./summonermethods";
 
 export { ChampionMastery } from "./championmasterymethods/classes";
 export { ChampionInfo } from "./championmethods/classes";
+export { LeagueList } from "./leaguemethods/classes";
+export { LeaguePosition } from "./leaguemethods/classes";
