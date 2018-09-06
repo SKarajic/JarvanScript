@@ -1,6 +1,5 @@
 import { Regions } from "../../../../enums";
 import { AbstractMethodClass } from '../../abstractmethodclass'; 
-import { MethodClassInterface } from "../../../../interfaces";
 
 export default class ChampionMastery extends AbstractMethodClass {
     public chestGranted: boolean;
