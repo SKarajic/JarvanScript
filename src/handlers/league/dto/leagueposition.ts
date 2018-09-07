@@ -2,6 +2,7 @@ import { JarvanScript } from "../../..";
 import { Regions } from "../../../models";
 import { AbstractMethodClass } from "../../abstractmethod";
 import MiniSeries from "./miniseries";
+import { Summoner } from "../..";
 
 export default class LeaguePosition extends AbstractMethodClass {
   public rank: string;
@@ -13,9 +14,9 @@ export default class LeaguePosition extends AbstractMethodClass {
   public losses: number;
   public freshBlood: boolean;
   public leagueId: string;
-  public playerOrTeamName: string;
+  public summonerName: string;
   public inactive: boolean;
-  public playerOrTeamId: string;
+  public summonerId: number;
   public tier: string;
   public leaguePoints: number;
 
@@ -47,10 +48,17 @@ export default class LeaguePosition extends AbstractMethodClass {
     this.losses = losses;
     this.freshBlood = freshBlood;
     this.leagueId = leagueId;
-    this.playerOrTeamName = playerOrTeamName;
+    this.summonerName = playerOrTeamName;
     this.inactive = inactive;
-    this.playerOrTeamId = playerOrTeamId;
+    this.summonerId = parseInt(playerOrTeamId);
     this.tier = tier;
     this.leaguePoints = leaguePoints;
+  }
+
+  /**
+   * gets the Summoner from the ChampionMastery
+   */
+  public async getSummoner(): Promise<Summoner> {
+    return (await this.wrapper.summoner.getSummonerById(this.summonerId));
   }
 }
