@@ -1,6 +1,6 @@
 {
   "name": "jarvanscript",
-  "version": "0.4.1-alpha",
+  "version": "0.4.2-alpha",
   "description": "A TypeScript RiotAPI wrapper",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
