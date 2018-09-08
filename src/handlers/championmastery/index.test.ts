@@ -1,10 +1,11 @@
 import { expect } from "chai";
+import dotenv = require("dotenv");
 import "mocha";
+
 import { JarvanScript } from "../..";
 import { Regions } from "../../models";
 import { ChampionMasteryMethods } from "./";
 
-import dotenv = require("dotenv");
 dotenv.config();
 
 const wrapper = new JarvanScript(process.env.RIOT_API_KEY as string, Regions.EUW, {});

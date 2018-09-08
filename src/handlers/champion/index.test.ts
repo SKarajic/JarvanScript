@@ -10,7 +10,7 @@ dotenv.config();
 
 const wrapper = new JarvanScript(process.env.RIOT_API_KEY as string, Regions.EUW, {});
 
-describe("ChampionMethods", () => {
+describe("ChampionInfoMethods", () => {
   it("should get data of all champions", async () => {
     const cil = await ChampionMethods.getChampionsInfo(wrapper);
     expect(cil[0].id).to.be.a("number");

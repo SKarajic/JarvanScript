@@ -30,14 +30,11 @@ export namespace ChampionMethods {
     championId?: number,
     region: Regions = regManager.getRegion()): Promise<ChampionInfo[]> {
     const championList: ChampionInfo[] = [];
-    let url: string;
 
     /* sets the right URL */
-    if (championId !== void 0) {
-      url = URL_CHAMPION_BY_ID;
-    } else {
-      url = URL_CHAMPION;
-    }
+    const url = championId !== void 0
+      ? URL_CHAMPION_BY_ID
+      : URL_CHAMPION;
 
     /* response data */
     const data = JSON.parse(
@@ -45,12 +42,12 @@ export namespace ChampionMethods {
 
     /* adding all champions */
     if (data.champions) data.champions.forEach(
-        (element: any) => championList.push(
-          new ChampionInfo(element, region, wrapper)));
+      (championInfo) => championList.push(
+        new ChampionInfo(championInfo, region, wrapper)));
 
     /* adding a single champion */
     else championList.push(
-        new ChampionInfo(data, region, wrapper));
+      new ChampionInfo(data, region, wrapper));
 
     return championList;
   }
