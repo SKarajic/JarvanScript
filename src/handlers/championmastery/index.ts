@@ -31,8 +31,7 @@ export namespace ChampionMasteryMethods {
     wrapper: JarvanScript,
     summonerId: number,
     championId?: number,
-    region: Regions = regManager.getRegion(),
-  ): Promise<ChampionMastery[]> {
+    region: Regions = regManager.getRegion()): Promise<ChampionMastery[]> {
     const championMasteryList: ChampionMastery[] = [];
 
     /* sets the right URL */
@@ -64,8 +63,7 @@ export namespace ChampionMasteryMethods {
    */
   export async function getChampionMasteryScore(
     summonerId: number,
-    region: Regions = RegionManager.getInstance().getRegion(),
-  ): Promise<number> {
+    region: Regions = RegionManager.getInstance().getRegion()): Promise<number> {
     const url = URL_SCORES;
     return parseInt(
       await RequestManager.getInstance().getDynamicData(
