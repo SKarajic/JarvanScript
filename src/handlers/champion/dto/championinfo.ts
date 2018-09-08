@@ -2,6 +2,9 @@ import { JarvanScript } from "../../..";
 import { Regions } from "../../../models";
 import { AbstractMethodClass } from "../../abstractmethod";
 
+/**
+ * General Champion status info
+ */
 export default class ChampionInfo extends AbstractMethodClass {
   public rankedEnabled: boolean;
   public customBotEnabled: boolean;
@@ -10,6 +13,13 @@ export default class ChampionInfo extends AbstractMethodClass {
   public freeToPlay: boolean;
   public id: number;
 
+  /**
+   * Creates a ChampionInfo object
+   *
+   * @param requestObject
+   * @param region
+   * @param wrapper
+   */
   constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {

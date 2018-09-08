@@ -23,10 +23,10 @@ export default class ChampionWrapper {
    * @param championId - (optional) specific champion
    * @param region - (optional) region
    */
-  public async getChampions(
+  public async getChampionsInfo(
     championId?: number,
     region?: Regions): Promise<ChampionInfo[]> {
-    return await ChampionMethods.getChampions(
+    return await ChampionMethods.getChampionsInfo(
       this.wrapper, championId, region);
   }
 }

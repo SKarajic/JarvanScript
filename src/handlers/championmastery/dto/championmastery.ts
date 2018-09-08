@@ -17,7 +17,7 @@ export default class ChampionMastery extends AbstractMethodClass {
   public readonly lastPlayTime: number;
 
   /**
-   * creates a ChampionMastery object
+   * Creates a ChampionMastery object
    *
    * @param requestObject
    * @param region
@@ -47,14 +47,14 @@ export default class ChampionMastery extends AbstractMethodClass {
   }
 
   /**
-   * gets the ChampionInfo from the ChampionMastery
+   * Gets the ChampionInfo from the ChampionMastery
    */
   public async getChampionInfo(): Promise<ChampionInfo> {
-    return (await this.wrapper.champion.getChampions(this.id))[0];
+    return (await this.wrapper.champion.getChampionsInfo(this.id))[0];
   }
 
   /**
-   * gets the Summoner from the ChampionMastery
+   * Gets the Summoner from the ChampionMastery
    */
   public async getSummoner(): Promise<Summoner> {
     return (await this.wrapper.summoner.getSummonerById(this.summonerId));

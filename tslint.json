@@ -6,7 +6,8 @@
     "jsRules": {},
     "rules": {
         "max-line-length": false,
-        "no-namespace": false
+        "no-namespace": false,
+        "curly": false
     },
     "rulesDirectory": []
 }
