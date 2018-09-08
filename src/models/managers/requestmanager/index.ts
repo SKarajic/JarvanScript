@@ -1,4 +1,4 @@
-import request = require("request");
+import Axios from "axios";
 import { KeyManager, RegionManager, Regions } from "../..";
 import { IRequestInfo } from "../../../interfaces";
 
@@ -30,12 +30,12 @@ export class RequestManager {
     RequestManager.instance = this;
   }
 
-  public getDynamicData(
+  public async getDynamicData(
     url: string,
     requestInfo: IRequestInfo,
     region: Regions,
   ): Promise<any|any[]> {
-    return new Promise((resolve, reject) => {
+    try {
       url = url.replace("{region}", region);
       for (const key in requestInfo) {
         if ((requestInfo as any)[key]) {
@@ -43,21 +43,16 @@ export class RequestManager {
         }
       }
 
-      const options = {
+      const { data } = await Axios.get(url, {
         headers: {
           "X-Riot-Token": KeyManager.getInstance().getKey(),
         },
-        url,
-      };
-
-      request(options, (error: any, response: any, body: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(body);
-        }
       });
-    });
+
+      return JSON.stringify(data);
+    } catch (e) {
+      if (e.response.status === 404) { return null; } else { throw e; }
+    }
   }
 
   public getStaticData(

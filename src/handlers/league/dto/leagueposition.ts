@@ -1,8 +1,8 @@
+import { Summoner } from "../..";
 import { JarvanScript } from "../../..";
 import { Regions } from "../../../models";
 import { AbstractMethodClass } from "../../abstractmethod";
 import MiniSeries from "./miniseries";
-import { Summoner } from "../..";
 
 export default class LeaguePosition extends AbstractMethodClass {
   public rank: string;
@@ -50,7 +50,7 @@ export default class LeaguePosition extends AbstractMethodClass {
     this.leagueId = leagueId;
     this.summonerName = playerOrTeamName;
     this.inactive = inactive;
-    this.summonerId = parseInt(playerOrTeamId);
+    this.summonerId = parseInt(playerOrTeamId, undefined);
     this.tier = tier;
     this.leaguePoints = leaguePoints;
   }

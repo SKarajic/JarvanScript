@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import "mocha";
-import { LeagueMethods } from "./";
 import { JarvanScript } from "../..";
 import { Regions } from "../../models";
+import { LeagueMethods } from "./";
 
 import dotenv = require("dotenv");
 dotenv.config();
