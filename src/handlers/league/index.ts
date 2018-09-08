@@ -6,6 +6,9 @@ const methods = Methods.LEAGUE;
 const regManager = RegionManager.getInstance();
 const reqManager = RequestManager.getInstance();
 
+/**
+ * Methods handling the LEAGUE-V3 endpoints
+ */
 export namespace LeagueMethods {
 
   /**

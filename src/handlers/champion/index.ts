@@ -22,6 +22,7 @@ export namespace ChampionMethods {
   /**
    * Returns information of one or all champions.
    *
+   * @param wrapper - the wrapper
    * @param championId - (optional) the ID of the champion
    * @param region - (optional) the region of choice
    */

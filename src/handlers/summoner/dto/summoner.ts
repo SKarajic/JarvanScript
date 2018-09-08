@@ -15,7 +15,7 @@ export default class Summoner extends AbstractMethodClass {
   public readonly revisionDate: Date;
 
   /**
-   * creates a Summoner
+   * Creates a Summoner
    *
    * @param requestObject
    * @param region

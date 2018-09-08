@@ -23,6 +23,7 @@ export namespace ChampionMasteryMethods {
   /**
    * Returns one or all Champion Masteries of a summoner.
    *
+   * @param wrapper - the wrapper
    * @param summonerId - the ID of the summoner
    * @param championId - (optional) the ID of the champion
    * @param region - (optional) the region of choice
@@ -58,8 +59,10 @@ export namespace ChampionMasteryMethods {
 
   /**
    * Returns the combined level of all the Champion Masteries of a summoner
-   * @param summonerId the ID of the summoner
-   * @param region the region of choice (optional)
+   *
+   * @param wrapper - the wrapper
+   * @param summonerId - the ID of the summoner
+   * @param region - (optional) the region of choice
    */
   export async function getChampionMasteryScore(
     summonerId: number,

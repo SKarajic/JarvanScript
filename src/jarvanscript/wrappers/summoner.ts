@@ -31,7 +31,7 @@ export default class SummonerWrapper {
   }
 
   /**
-   * Gets the Summoner by accountID
+   * Gets the Summoner by summonerID
    *
    * @param summonerId - ID of the summoner in question
    * @param region - (optional) region
