@@ -8,6 +8,7 @@ import {
   ChampionMasteryWrapper,
   ChampionWrapper,
   LeagueWrapper,
+  StatusWrapper,
   SummonerWrapper,
 } from "./wrappers";
 
@@ -22,6 +23,7 @@ export default class JarvanScript {
   public spectate = SpectateMethods;
   public static = StaticMethods;
   public summoner: SummonerWrapper;
+  public status: StatusWrapper;
 
   /**
    * creates a new wrapper instance
@@ -38,5 +40,6 @@ export default class JarvanScript {
     this.champion = new ChampionWrapper(this);
     this.summoner = new SummonerWrapper(this);
     this.league = new LeagueWrapper(this);
+    this.status = new StatusWrapper(this);
   }
 }

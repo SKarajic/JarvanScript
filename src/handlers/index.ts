@@ -13,3 +13,4 @@ export { ChampionInfo } from "./champion/dto";
 export { LeagueList } from "./league/dto";
 export { LeaguePosition } from "./league/dto";
 export { Summoner } from "./summoner/dto";
+export { Shard } from "./status/dto";
