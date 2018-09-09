@@ -7,14 +7,14 @@ import Service from "./service";
 import Translation from "./translation";
 
 export default class Shard extends AbstractMethodClass {
-  public name: string;
-  public slug: string;
-  public locales: string[];
-  public hostname: string;
-  public regionTag: string;
-  public services: Service[];
+  public readonly name: string;
+  public readonly slug: string;
+  public readonly locales: string[];
+  public readonly hostname: string;
+  public readonly regionTag: string;
+  public readonly services: Service[];
 
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       name,
@@ -33,6 +33,7 @@ export default class Shard extends AbstractMethodClass {
     this.services = createServices(services);
   }
 }
+
 function createServices(services: any) {
   return services.map((service) =>
     createService(service));

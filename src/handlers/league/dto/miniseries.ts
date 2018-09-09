@@ -3,12 +3,12 @@ import { Regions } from "../../../models";
 import { AbstractMethodClass } from "../../abstractmethod";
 
 export default class MiniSeries extends AbstractMethodClass {
-  public wins: number;
-  public losses: number;
-  public target: number;
-  public progress: string;
+  public readonly wins: number;
+  public readonly losses: number;
+  public readonly target: number;
+  public readonly progress: string;
 
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       wins,

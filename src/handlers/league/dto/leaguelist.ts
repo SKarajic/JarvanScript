@@ -4,13 +4,13 @@ import { AbstractMethodClass } from "../../abstractmethod";
 import LeagueItem from "./leagueitem";
 
 export default class LeagueList extends AbstractMethodClass {
-  public leagueId: string;
-  public tier: string;
-  public entries:	LeagueItem[];
-  public queue: string;
-  public name: string;
+  public readonly leagueId: string;
+  public readonly tier: string;
+  public readonly entries:	LeagueItem[];
+  public readonly queue: string;
+  public readonly name: string;
 
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       pleagueId,

@@ -1,10 +1,10 @@
 import Message from "./message";
 
 export default class Incident {
-  public active: boolean;
-  public createdAt: Date;
-  public id: number;
-  public updates: Message[];
+  public readonly active: boolean;
+  public readonly createdAt: Date;
+  public readonly id: number;
+  public readonly updates: Message[];
 
   public constructor(
     id: number,

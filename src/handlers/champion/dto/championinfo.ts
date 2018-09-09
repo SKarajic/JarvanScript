@@ -6,12 +6,12 @@ import { AbstractMethodClass } from "../../abstractmethod";
  * General Champion status info
  */
 export default class ChampionInfo extends AbstractMethodClass {
-  public rankedEnabled: boolean;
-  public customBotEnabled: boolean;
-  public coopBotEnabled: boolean;
-  public active: boolean;
-  public freeToPlay: boolean;
-  public id: number;
+  public readonly rankedEnabled: boolean;
+  public readonly customBotEnabled: boolean;
+  public readonly coopBotEnabled: boolean;
+  public readonly active: boolean;
+  public readonly freeToPlay: boolean;
+  public readonly id: number;
 
   /**
    * Creates a ChampionInfo object
@@ -20,7 +20,7 @@ export default class ChampionInfo extends AbstractMethodClass {
    * @param region
    * @param wrapper
    */
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       rankedPlayEnabled,

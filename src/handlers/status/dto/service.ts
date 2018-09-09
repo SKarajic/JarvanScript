@@ -1,12 +1,12 @@
 import Incident from "./incident";
 
 export default class Service {
-  public status: string;
-  public incidents: Incident[];
-  public name: string;
-  public slug: string;
+  public readonly status: string;
+  public readonly incidents: Incident[];
+  public readonly name: string;
+  public readonly slug: string;
 
-  constructor(
+  public constructor(
     status: string,
     incidents: Incident[],
     name: string,

@@ -1,9 +1,9 @@
 export default class Translation {
-  public locale: string;
-  public content: string;
-  public heading: string;
+  public readonly locale: string;
+  public readonly content: string;
+  public readonly heading: string;
 
-  constructor(
+  public constructor(
     locale: string,
     content: string,
     heading: string) {

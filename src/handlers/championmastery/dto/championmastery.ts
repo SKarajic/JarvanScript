@@ -23,7 +23,7 @@ export default class ChampionMastery extends AbstractMethodClass {
    * @param region
    * @param wrapper
    */
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       chestGranted,

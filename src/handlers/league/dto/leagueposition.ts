@@ -5,22 +5,22 @@ import { AbstractMethodClass } from "../../abstractmethod";
 import MiniSeries from "./miniseries";
 
 export default class LeaguePosition extends AbstractMethodClass {
-  public rank: string;
-  public queueType: string;
-  public hotStreak: boolean;
-  public miniSeries: MiniSeries | null;
-  public wins: number;
-  public veteran: boolean;
-  public losses: number;
-  public freshBlood: boolean;
-  public leagueId: string;
-  public summonerName: string;
-  public inactive: boolean;
-  public summonerId: number;
-  public tier: string;
-  public leaguePoints: number;
+  public readonly rank: string;
+  public readonly queueType: string;
+  public readonly hotStreak: boolean;
+  public readonly miniSeries: MiniSeries | null;
+  public readonly wins: number;
+  public readonly veteran: boolean;
+  public readonly losses: number;
+  public readonly freshBlood: boolean;
+  public readonly leagueId: string;
+  public readonly summonerName: string;
+  public readonly inactive: boolean;
+  public readonly summonerId: number;
+  public readonly tier: string;
+  public readonly leaguePoints: number;
 
-  constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
+  public constructor(requestObject: any, region: Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
       rank,

@@ -1,13 +1,13 @@
 import Translation from "./translation";
 
 export default class Message {
-  public severity: string;
-  public author: string;
-  public createdAt: string;
-  public translations: Translation[];
-  public updatedAt: string;
-  public content: string;
-  public id: string;
+  public readonly severity: string;
+  public readonly author: string;
+  public readonly createdAt: string;
+  public readonly translations: Translation[];
+  public readonly updatedAt: string;
+  public readonly content: string;
+  public readonly id: string;
 
   public constructor(
     id: string,
