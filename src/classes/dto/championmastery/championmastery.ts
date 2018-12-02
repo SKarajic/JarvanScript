@@ -12,7 +12,7 @@ export class ChampionMastery extends DTO implements JarvanModelInterface.Champio
   public readonly level: number;
   public readonly points: number;
   public readonly id: number;
-  public readonly summonerId: number;
+  public readonly summonerId: string;
   public readonly pointsUntilNextLevel: number;
   public readonly pointsSinceLastLevel: number;
   public readonly lastPlayTime: number;
@@ -31,7 +31,7 @@ export class ChampionMastery extends DTO implements JarvanModelInterface.Champio
       championLevel,
       championPoints,
       championId,
-      playerId,
+      summonerId,
       championPointsUntilNextLevel,
       championPointsSinceLastLevel,
       lastPlayTime,
@@ -42,7 +42,7 @@ export class ChampionMastery extends DTO implements JarvanModelInterface.Champio
     this.lastPlayTime = lastPlayTime;
     this.chestGranted = chestGranted;
     this.points = championPoints;
-    this.summonerId = playerId;
+    this.summonerId = summonerId;
     this.level = championLevel;
     this.id = championId;
   }

@@ -8,7 +8,7 @@ export interface ChampionMastery {
   readonly level: number;
   readonly points: number;
   readonly id: number;
-  readonly summonerId: number;
+  readonly summonerId: string;
   readonly pointsUntilNextLevel: number;
   readonly pointsSinceLastLevel: number;
   readonly lastPlayTime: number;

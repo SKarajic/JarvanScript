@@ -70,7 +70,7 @@ export class RequestManager {
 }
 
 interface RequestInfo {
-  accountId?: number;
+  accountId?: string;
   championId?: number;
   itemId?: number;
   leagueId?: string;
@@ -79,7 +79,7 @@ interface RequestInfo {
   queue?: string|JarvanEnum.Queues;
   runeId?: number;
   tournamentCode?: any;
-  summonerId?: number;
+  summonerId?: string;
   summonerName?: string;
   summonerSpellId?: number;
 }

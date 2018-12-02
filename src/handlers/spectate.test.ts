@@ -15,7 +15,7 @@ beforeEach(() => {
 
 describe("SpectateMethods", () => {
   it("should get spectator data of a summoner", (done) => {
-    SpectateMethods.spectateMatch(69658457)
+    SpectateMethods.spectateMatch("tu4I5AhSHMeBKthXHTs396jAdVSTHtrYdktyow1rwOICvAk")
     .then((data) => {
       done();
     });

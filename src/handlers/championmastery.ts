@@ -27,7 +27,7 @@ export namespace ChampionMasteryMethods {
    */
   export async function getChampionMasteries(
     wrapper: JarvanScript,
-    summonerId: number,
+    summonerId: string,
     championId?: number,
     region: JarvanEnum.Regions = regManager.getRegion()
   ): Promise<JarvanModelInterface.ChampionMastery.ChampionMastery[]> {
@@ -63,7 +63,7 @@ export namespace ChampionMasteryMethods {
    * @param region - (optional) the region of choice
    */
   export async function getChampionMasteryScore(
-    summonerId: number,
+    summonerId: string,
     region: JarvanEnum.Regions = regManager.getRegion()): Promise<number> {
     const url = URL_SCORES;
     return parseInt(

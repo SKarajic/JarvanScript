@@ -5,7 +5,7 @@ import { ProfileIcon } from "./profileicon";
  */
 export interface Summoner {
   readonly id: number;
-  readonly accountId: number;
+  readonly accountId: string;
   readonly name: string;
   readonly profileIcon: ProfileIcon;
   readonly level: number;

@@ -13,7 +13,7 @@ export interface LeaguePosition {
   readonly leagueId: string;
   readonly summonerName: string;
   readonly inactive: boolean;
-  readonly summonerId: number;
+  readonly summonerId: string;
   readonly tier: string;
   readonly leaguePoints: number;
 

@@ -23,12 +23,12 @@ describe("LeagueMethods", () => {
   });
 
   it("should get the ranks of a summoner", async () => {
-    const leaguePositions = await LeagueMethods.getRanks(wrapper, 69658457);
+    const leaguePositions = await LeagueMethods.getRanks(wrapper, "tu4I5AhSHMeBKthXHTs396jAdVSTHtrYdktyow1rwOICvAk");
     expect(leaguePositions[0].leagueId).to.be.a("string");
   });
 
   it("should get the league of a summoner", async () => {
-    const leaguePositions = await LeagueMethods.getRanks(wrapper, 69658457);
+    const leaguePositions = await LeagueMethods.getRanks(wrapper, "tu4I5AhSHMeBKthXHTs396jAdVSTHtrYdktyow1rwOICvAk");
     const leagueList = await LeagueMethods.getLeague(wrapper, leaguePositions[0].leagueId);
 
     expect(leaguePositions[0].leagueId).to.be.a("string");

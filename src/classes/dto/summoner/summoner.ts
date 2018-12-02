@@ -10,7 +10,7 @@ import { DTO } from "../abstract";
  */
 export class Summoner extends DTO implements JarvanModelInterface.Summoner.Summoner {
   public readonly id: number;
-  public readonly accountId: number;
+  public readonly accountId: string;
   public readonly name: string;
   public readonly profileIcon: ProfileIcon;
   public readonly level: number;

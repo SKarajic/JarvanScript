@@ -5,7 +5,7 @@ const methods = JarvanEnum.Methods.MATCH;
 
 export namespace MatchMethods {
   export function getMatchList(
-    accountId: number,
+    accountId: string,
     region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
   ): Promise<any> {
     return new Promise((resolve, reject) => {

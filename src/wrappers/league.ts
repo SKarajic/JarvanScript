@@ -68,7 +68,7 @@ export default class LeagueWrapper {
    * @param region - (optional) region
    */
   public async getRanks(
-    summonerId: number,
+    summonerId: string,
     region?: JarvanEnum.Regions
   ): Promise<JarvanModelInterface.League.LeaguePosition[]> {
     return await LeagueMethods.getRanks(

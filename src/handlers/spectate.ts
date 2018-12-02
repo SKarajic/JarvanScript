@@ -11,7 +11,7 @@ export namespace SpectateMethods {
    * @param region
    */
   export function spectateMatch(
-    summonerId: number,
+    summonerId: string,
     region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
   ): Promise<any> {
     return new Promise((resolve, reject) => {

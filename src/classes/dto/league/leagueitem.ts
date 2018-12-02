@@ -15,7 +15,7 @@ export class LeagueItem extends DTO implements JarvanModelInterface.League.Leagu
   public readonly freshBlood: boolean;
   public readonly summonerName: string;
   public readonly inactive: boolean;
-  public readonly summonerId: number;
+  public readonly summonerId: string;
   public readonly leaguePoints: number;
 
   public constructor(requestObject: any, region: JarvanEnum.Regions, wrapper: JarvanScript) {
@@ -43,7 +43,7 @@ export class LeagueItem extends DTO implements JarvanModelInterface.League.Leagu
     this.freshBlood = freshBlood;
     this.summonerName = playerOrTeamName;
     this.inactive = inactive;
-    this.summonerId = parseInt(playerOrTeamId, undefined);
+    this.summonerId = playerOrTeamId;
     this.leaguePoints = leaguePoints;
   }
 

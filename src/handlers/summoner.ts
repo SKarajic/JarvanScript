@@ -22,7 +22,7 @@ export namespace SummonerMethods {
    */
   export async function getSummonerByAccountId(
     wrapper: JarvanScript,
-    accountId: number,
+    accountId: string,
     region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion()
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     const url = methods.BY_ACCOUNT_ID.VALUE;
@@ -41,7 +41,7 @@ export namespace SummonerMethods {
    */
   export async function getSummonerById(
     wrapper: JarvanScript,
-    summonerId: number,
+    summonerId: string,
     region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion()
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     const url = methods.BY_SUMMONER_ID.VALUE;

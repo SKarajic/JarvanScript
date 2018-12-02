@@ -26,7 +26,7 @@ export default class SummonerWrapper {
    * @param region - (optional) region
    */
   public async getSummonerByAccountId(
-    accountId: number,
+    accountId: string,
     region?: JarvanEnum.Regions
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     return await SummonerMethods.getSummonerByAccountId(
@@ -40,7 +40,7 @@ export default class SummonerWrapper {
    * @param region - (optional) region
    */
   public async getSummonerById(
-    summonerId: number,
+    summonerId: string,
     region?: JarvanEnum.Regions
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     return await SummonerMethods.getSummonerById(

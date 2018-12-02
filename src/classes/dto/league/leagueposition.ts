@@ -17,7 +17,7 @@ export class LeaguePosition extends DTO implements JarvanModelInterface.League.L
   public readonly leagueId: string;
   public readonly summonerName: string;
   public readonly inactive: boolean;
-  public readonly summonerId: number;
+  public readonly summonerId: string;
   public readonly tier: string;
   public readonly leaguePoints: number;
 
@@ -51,7 +51,7 @@ export class LeaguePosition extends DTO implements JarvanModelInterface.League.L
     this.leagueId = leagueId;
     this.summonerName = playerOrTeamName;
     this.inactive = inactive;
-    this.summonerId = parseInt(playerOrTeamId, undefined);
+    this.summonerId = playerOrTeamId;
     this.tier = tier;
     this.leaguePoints = leaguePoints;
   }

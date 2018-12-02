@@ -27,7 +27,7 @@ export default class ChampionMasteryWrapper {
    * @param region - (optional) region
    */
   public async getChampionMasteries(
-    summonerId: number,
+    summonerId: string,
     championId?: number,
     region?: JarvanEnum.Regions
   ): Promise<JarvanModelInterface.ChampionMastery.ChampionMastery[]> {
@@ -42,7 +42,7 @@ export default class ChampionMasteryWrapper {
    * @param region - (optional) region
    */
   public async getChampionMasteryScore(
-    summonerId: number,
+    summonerId: string,
     region?: JarvanEnum.Regions
   ): Promise<number> {
     return await ChampionMasteryMethods.getChampionMasteryScore(

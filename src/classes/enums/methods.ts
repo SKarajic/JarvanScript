@@ -6,36 +6,36 @@ export const Methods = {
     CHAMPION_MASTERIES: {
       BY_SUMMONER_ID: {
         BY_CHAMPION_ID: {
-          VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}",
+          VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}",
         },
-        VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{summonerId}",
       },
     },
     SCORES: {
       BY_SUMMONER_ID: {
-        VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/{summonerId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/champion-mastery/v4/scores/by-summoner/{summonerId}",
       },
     },
   },
   LEAGUE: {
     CHALLENGER_LEAGUES: {
       BY_QUEUE: {
-        VALUE: "https://{region}.api.riotgames.com/lol/league/v3/challengerleagues/by-queue/{queue}",
+        VALUE: "https://{region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/{queue}",
       },
     },
     LEAGUES: {
       BY_LEAGUE_ID: {
-        VALUE: "https://{region}.api.riotgames.com/lol/league/v3/leagues/{leagueId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/league/v4/leagues/{leagueId}",
       },
     },
     MASTER_LEAGUES: {
       BY_QUEUE: {
-        VALUE: "https://{region}.api.riotgames.com/lol/league/v3/masterleagues/by-queue/{queue}",
+        VALUE: "https://{region}.api.riotgames.com/lol/league/v4/masterleagues/by-queue/{queue}",
       },
     },
     POSITIONS: {
       BY_SUMMONER_ID: {
-        VALUE: "https://{region}.api.riotgames.com/lol/league/v3/positions/by-summoner/{summonerId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/league/v4/positions/by-summoner/{summonerId}",
       },
     },
   },
@@ -43,36 +43,36 @@ export const Methods = {
     MATCHES: {
       BY_MATCH_ID: {
         BY_TOURNAMENT_CODE: {
-          VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}",
+          VALUE: "https://{region}.api.riotgames.com/lol/match/v4/matches/{matchId}/by-tournament-code/{tournamentCode}",
         },
-        VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/{matchId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/match/v4/matches/{matchId}",
       },
       BY_TOURNAMENT_CODE: {
-        VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids",
+        VALUE: "https://{region}.api.riotgames.com/lol/match/v4/matches/by-tournament-code/{tournamentCode}/ids",
       },
     },
     MATCH_LISTS: {
       BY_ACCOUNT_ID: {
         RECENT: {
-          VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matchlists/by-account/{accountId}/recent",
+          VALUE: "https://{region}.api.riotgames.com/lol/match/v4/matchlists/by-account/{accountId}/recent",
         },
-        VALUE: "https://{region}.api.riotgames.com/lol/match/v3/matchlists/by-account/{accountId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/match/v4/matchlists/by-account/{accountId}",
       },
     },
     TIMELINES: {
       BY_MATCH_ID: {
-        VALUE: "https://{region}.api.riotgames.com/lol/match/v3/timelines/by-match/{matchId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/match/v4/timelines/by-match/{matchId}",
       },
     },
   },
   SPECTATOR: {
     ACTIVE_GAMES: {
       BY_SUMMONER_ID: {
-        VALUE: "https://{region}.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/{summonerId}",
+        VALUE: "https://{region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/{summonerId}",
       },
     },
     FEATURED_GAMES: {
-      VALUE: "https://{region}.api.riotgames.com/lol/spectator/v3/featured-games",
+      VALUE: "https://{region}.api.riotgames.com/lol/spectator/v4/featured-games",
     },
   },
   STATIC_DATA: {
@@ -130,13 +130,13 @@ export const Methods = {
   },
   SUMMONER: {
     BY_ACCOUNT_ID: {
-      VALUE: " https://{region}.api.riotgames.com/lol/summoner/v3/summoners/by-account/{accountId}",
+      VALUE: " https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-account/{accountId}",
     },
     BY_SUMMONER_ID: {
-      VALUE: "https://{region}.api.riotgames.com/lol/summoner/v3/summoners/{summonerId}",
+      VALUE: "https://{region}.api.riotgames.com/lol/summoner/v4/summoners/{summonerId}",
     },
     BY_SUMMONER_NAME: {
-      VALUE: "https://{region}.api.riotgames.com/lol/summoner/v3/summoners/by-name/{summonerName}",
+      VALUE: "https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}",
     },
   },
 };

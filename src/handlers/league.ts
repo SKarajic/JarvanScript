@@ -80,7 +80,7 @@ export namespace LeagueMethods {
    */
   export async function getRanks(
     wrapper: JarvanScript,
-    summonerId: number,
+    summonerId: string,
     region: JarvanEnum.Regions = regManager.getRegion(),
   ): Promise<JarvanModelInterface.League.LeaguePosition[]> {
     const url = methods.POSITIONS.BY_SUMMONER_ID.VALUE;
