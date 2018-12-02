@@ -1,2 +1,1 @@
-export { default as JarvanScript } from "./jarvanscript";
-export { Queues, Regions } from "./models";
+export { default } from "./jarvanscript";

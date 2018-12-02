@@ -1,16 +1,18 @@
+import JarvanManager from "../classes/managers";
+import JarvanEnum from "../classes/enums";
+
 import {
   MatchMethods,
   SpectateMethods,
   StaticMethods,
 } from "../handlers";
-import { KeyManager, RegionManager, Regions } from "../models";
 import {
   ChampionMasteryWrapper,
   ChampionWrapper,
   LeagueWrapper,
   StatusWrapper,
   SummonerWrapper,
-} from "./wrappers";
+} from "../wrappers";
 
 /**
  * The TypeScript Riot API wrapper
@@ -32,9 +34,9 @@ export default class JarvanScript {
    * @param region - the region
    * @param config - the configuration
    */
-  constructor(key: string, region: Regions, config: object) {
-    KeyManager.getInstance().setKey(key);
-    RegionManager.getInstance().setRegion(region);
+  constructor(key: string, region: JarvanEnum.Regions, config: object) {
+    JarvanManager.KeyManager.getInstance().setKey(key);
+    JarvanManager.RegionManager.getInstance().setRegion(region);
 
     this.championMastery = new ChampionMasteryWrapper(this);
     this.champion = new ChampionWrapper(this);
