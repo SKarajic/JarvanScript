@@ -20,16 +20,14 @@ export default class ChampionWrapper {
   }
 
   /**
-   * Gets list of information entities about champion
+   * Gets the current Champion Rotation
    *
-   * @param championId - (optional) specific champion
    * @param region - (optional) region
    */
   public async getChampionsInfo(
-    championId?: number,
     region?: JarvanEnum.Regions
-  ): Promise<JarvanModelInterface.Champion.ChampionInfo[]> {
-    return await ChampionMethods.getChampionsInfo(
-      this.wrapper, championId, region);
+  ): Promise<JarvanModelInterface.Champion.ChampionRotation> {
+    return await ChampionMethods.getChampionRotation(
+      this.wrapper, region);
   }
 }

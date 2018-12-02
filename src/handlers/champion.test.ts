@@ -17,14 +17,11 @@ beforeEach(function (done) {
   }, 500);
 });
 
-describe("ChampionInfoMethods", () => {
-  it("should get data of all champions", async () => {
-    const cil = await ChampionMethods.getChampionsInfo(wrapper);
-    expect(cil[0].id).to.be.a("number");
-  });
-
-  it("should get data of champion with id 7", async () => {
-    const cil = await ChampionMethods.getChampionsInfo(wrapper, 7);
-    expect(cil[0].id).to.be.a("number");
+describe("ChampionRotationMethods", () => {
+  it("should get data of the champion rotation", async () => {
+    const cil = await ChampionMethods.getChampionRotation(wrapper);
+    expect(cil.freeChampionsForNewPlayers[0].id).to.be.a("number");
+    expect(cil.maximumNewPlayerLevel).to.be.a("number");
+    expect(cil.freeChampions[0].id).to.be.a("number");
   });
 });

@@ -1,1 +1,2 @@
-export * from './championinfo'
+export * from './championrotation'
+export * from './rotationchampion'

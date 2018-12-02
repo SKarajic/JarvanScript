@@ -1,4 +1,4 @@
-import { Summoner, Champion } from "../index";
+import { Summoner } from "../index";
 
 /**
  * Summoner's mastery in a Champion
@@ -12,11 +12,6 @@ export interface ChampionMastery {
   readonly pointsUntilNextLevel: number;
   readonly pointsSinceLastLevel: number;
   readonly lastPlayTime: number;
-
-  /**
-   * Gets the ChampionInfo from the ChampionMastery
-   */
-  getChampionInfo(): Promise<Champion.ChampionInfo>
 
   /**
    * Gets the Summoner from the ChampionMastery

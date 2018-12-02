@@ -27,14 +27,6 @@ describe("ChampionMasteryMethods", () => {
     expect(level).to.be.a("number");
   });
 
-  it("should get champion info from champion masteries", async () => {
-    const cm = await ChampionMasteryMethods.getChampionMasteries(wrapper, 69658457);
-    const ci = await cm[0].getChampionInfo();
-    expect(cm[0].id).to.be.a("number");
-    expect(cm[0].id).to.equal(ci.id);
-    expect(ci.id).to.be.a("number");
-  });
-
   it("should get summoner from champion masteries", async () => {
     const cm = await ChampionMasteryMethods.getChampionMasteries(wrapper, 69658457);
     const summ = await cm[0].getSummoner();

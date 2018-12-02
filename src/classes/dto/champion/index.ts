@@ -1,1 +1,1 @@
-export * from "./championinfo";
+export * from "./championrotation";

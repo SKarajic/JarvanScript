@@ -1,9 +1,6 @@
 export const Methods = {
   CHAMPION: {
-    BY_CHAMPION_ID: {
-      VALUE: "https://{region}.api.riotgames.com/lol/platform/v3/champions/{championId}",
-    },
-    VALUE: "https://{region}.api.riotgames.com/lol/platform/v3/champions",
+    VALUE: "https://{region}.api.riotgames.com/lol/platform/v3/champion-rotations",
   },
   CHAMPION_MASTERY: {
     CHAMPION_MASTERIES: {

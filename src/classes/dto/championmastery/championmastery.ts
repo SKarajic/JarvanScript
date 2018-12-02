@@ -48,13 +48,6 @@ export class ChampionMastery extends DTO implements JarvanModelInterface.Champio
   }
 
   /**
-   * Gets the ChampionInfo from the ChampionMastery
-   */
-  public async getChampionInfo(): Promise<JarvanModelInterface.Champion.ChampionInfo> {
-    return (await this.wrapper.champion.getChampionsInfo(this.id))[0];
-  }
-
-  /**
    * Gets the Summoner from the ChampionMastery
    */
   public async getSummoner(): Promise<JarvanModelInterface.Summoner.Summoner> {
