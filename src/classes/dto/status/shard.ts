@@ -1,12 +1,12 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
-import { Translation } from "./translation";
+import { DTO } from "../abstract";
 import { Incident } from "./incident";
 import { Message } from "./message";
 import { Service } from "./service";
-import { DTO } from "../abstract";
+import { Translation } from "./translation";
 
 export class Shard extends DTO implements JarvanModelInterface.Status.Shard {
   public readonly name: string;

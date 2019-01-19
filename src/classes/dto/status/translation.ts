@@ -1,4 +1,6 @@
-export class Translation {
+import JarvanModelInterface from "../../interfaces";
+
+export class Translation implements JarvanModelInterface.Status.Translation {
   public readonly locale: string;
   public readonly content: string;
   public readonly heading: string;

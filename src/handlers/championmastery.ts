@@ -1,8 +1,8 @@
+import JarvanScript from "..";
+import JarvanDTO from "../classes/dto";
+import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
 import JarvanManager from "../classes/managers";
-import JarvanEnum from "../classes/enums";
-import JarvanDTO from "../classes/dto";
-import JarvanScript from "..";
 
 const methods = JarvanEnum.Methods.CHAMPION_MASTERY;
 const reqManager = JarvanManager.RequestManager.getInstance();
@@ -20,6 +20,10 @@ export namespace ChampionMasteryMethods {
   /**
    * Returns one or all Champion Masteries of a summoner.
    *
+   * endpoints:
+   *  - /lol/champion-mastery/v4/champion-masteries/by-summoner/:encryptedSummonerId/by-champion/:championId
+   *  - /lol/champion-mastery/v4/champion-masteries/by-summoner/:encryptedSummonerId
+   *
    * @param wrapper - the wrapper
    * @param summonerId - the ID of the summoner
    * @param championId - (optional) the ID of the champion
@@ -29,7 +33,7 @@ export namespace ChampionMasteryMethods {
     wrapper: JarvanScript,
     summonerId: string,
     championId?: number,
-    region: JarvanEnum.Regions = regManager.getRegion()
+    region: JarvanEnum.Regions = regManager.getRegion(),
   ): Promise<JarvanModelInterface.ChampionMastery.ChampionMastery[]> {
     const championMasteryList: JarvanDTO.ChampionMastery.ChampionMastery[] = [];
 
@@ -57,6 +61,9 @@ export namespace ChampionMasteryMethods {
 
   /**
    * Returns the combined level of all the Champion Masteries of a summoner
+   *
+   * endpoints:
+   *  - /lol/champion-mastery/v4/scores/by-summoner/:encryptedSummonerId
    *
    * @param wrapper - the wrapper
    * @param summonerId - the ID of the summoner

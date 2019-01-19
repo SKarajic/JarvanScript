@@ -8,4 +8,4 @@ export interface Message {
   readonly updatedAt: string;
   readonly content: string;
   readonly id: string;
-} 
+}

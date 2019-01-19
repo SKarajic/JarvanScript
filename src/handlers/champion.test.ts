@@ -11,8 +11,8 @@ dotenv.config();
 
 const wrapper = new JarvanScript(process.env.RIOT_API_KEY as string, JarvanEnum.Regions.EUW, {});
 
-beforeEach(function (done) {
-  setTimeout(function(){
+beforeEach((done) => {
+  setTimeout(() => {
     done();
   }, 500);
 });

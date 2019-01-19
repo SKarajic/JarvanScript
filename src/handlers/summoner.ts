@@ -1,10 +1,9 @@
 
+import JarvanScript from "..";
+import JarvanDTO from "../classes/dto";
+import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
 import JarvanManager from "../classes/managers";
-import JarvanEnum from "../classes/enums";
-import JarvanDTO from "../classes/dto";
-import JarvanScript from "..";
-
 
 const methods = JarvanEnum.Methods.SUMMONER;
 
@@ -23,7 +22,7 @@ export namespace SummonerMethods {
   export async function getSummonerByAccountId(
     wrapper: JarvanScript,
     accountId: string,
-    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion()
+    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     const url = methods.BY_ACCOUNT_ID.VALUE;
     const data = JSON.parse(await JarvanManager.RequestManager.getInstance()
@@ -42,7 +41,7 @@ export namespace SummonerMethods {
   export async function getSummonerById(
     wrapper: JarvanScript,
     summonerId: string,
-    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion()
+    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     const url = methods.BY_SUMMONER_ID.VALUE;
     const data = JSON.parse(await JarvanManager.RequestManager.getInstance()
@@ -61,7 +60,7 @@ export namespace SummonerMethods {
   export async function getSummonerByName(
     wrapper: JarvanScript,
     summonerName: string,
-    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion()
+    region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     const url = methods.BY_SUMMONER_NAME.VALUE;
     const data = JSON.parse(await JarvanManager.RequestManager.getInstance()

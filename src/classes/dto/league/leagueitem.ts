@@ -1,9 +1,9 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
-import { MiniSeries } from "./miniseries";
 import { DTO } from "../abstract";
+import { MiniSeries } from "./miniseries";
 
 export class LeagueItem extends DTO implements JarvanModelInterface.League.LeagueItem {
   public readonly rank: string;

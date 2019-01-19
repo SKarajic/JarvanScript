@@ -3,5 +3,5 @@
  */
 export interface ProfileIcon {
   readonly id: number;
-  getURL(patch: string): string
+  getURL(patch: string): string;
 }

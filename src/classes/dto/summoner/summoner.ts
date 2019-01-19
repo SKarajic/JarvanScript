@@ -1,9 +1,9 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
-import { ProfileIcon } from "./profileicon";
 import { DTO } from "../abstract";
+import { ProfileIcon } from "./profileicon";
 
 /**
  * Summoner

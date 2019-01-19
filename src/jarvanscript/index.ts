@@ -1,8 +1,7 @@
-import JarvanManager from "../classes/managers";
 import JarvanEnum from "../classes/enums";
+import JarvanManager from "../classes/managers";
 
 import {
-  MatchMethods,
   SpectateMethods,
   StaticMethods,
 } from "../handlers";
@@ -10,6 +9,7 @@ import {
   ChampionMasteryWrapper,
   ChampionWrapper,
   LeagueWrapper,
+  MatchWrapper,
   StatusWrapper,
   SummonerWrapper,
 } from "../wrappers";
@@ -21,7 +21,7 @@ export default class JarvanScript {
   public championMastery: ChampionMasteryWrapper;
   public champion: ChampionWrapper;
   public league: LeagueWrapper;
-  public match = MatchMethods;
+  public match: MatchWrapper;
   public spectate = SpectateMethods;
   public static = StaticMethods;
   public summoner: SummonerWrapper;
@@ -31,7 +31,7 @@ export default class JarvanScript {
    * creates a new wrapper instance
    *
    * @param key - the API key
-   * @param region - the region
+   * @param region - the default region
    * @param config - the configuration
    */
   constructor(key: string, region: JarvanEnum.Regions, config: object) {
@@ -43,5 +43,6 @@ export default class JarvanScript {
     this.summoner = new SummonerWrapper(this);
     this.league = new LeagueWrapper(this);
     this.status = new StatusWrapper(this);
+    this.match = new MatchWrapper(this);
   }
 }

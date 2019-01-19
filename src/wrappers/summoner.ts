@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../classes/interfaces";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
 
 import { SummonerMethods } from "../handlers";
 
@@ -27,7 +27,7 @@ export default class SummonerWrapper {
    */
   public async getSummonerByAccountId(
     accountId: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     return await SummonerMethods.getSummonerByAccountId(
       this.wrapper, accountId, region);
@@ -41,7 +41,7 @@ export default class SummonerWrapper {
    */
   public async getSummonerById(
     summonerId: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     return await SummonerMethods.getSummonerById(
       this.wrapper, summonerId, region);
@@ -55,7 +55,7 @@ export default class SummonerWrapper {
    */
   public async getSummonerByName(
     summonerName: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.Summoner.Summoner> {
     return await SummonerMethods.getSummonerByName(
       this.wrapper, summonerName, region);

@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
 import { DTO } from "../abstract";
 

@@ -1,6 +1,6 @@
 import JarvanEnum from "./classes/enums";
-export default JarvanEnum.Regions
-export const { 
+export default JarvanEnum.Regions;
+export const {
   EUW,
   EUNE,
   TR,
@@ -11,4 +11,4 @@ export const {
   JP,
   KR,
   RU,
-} = JarvanEnum.Regions
+} = JarvanEnum.Regions;

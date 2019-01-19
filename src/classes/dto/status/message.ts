@@ -1,6 +1,7 @@
+import JarvanModelInterface from "../../interfaces";
 import { Translation } from "./translation";
 
-export class Message {
+export class Message implements JarvanModelInterface.Status.Message {
   public readonly severity: string;
   public readonly author: string;
   public readonly createdAt: string;

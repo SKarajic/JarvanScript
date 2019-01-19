@@ -2,8 +2,8 @@ import { expect } from "chai";
 import dotenv = require("dotenv");
 import "mocha";
 
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
 
 import { ChampionMasteryMethods } from "./championmastery";
 

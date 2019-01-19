@@ -1,11 +1,13 @@
-import * as Status from './status/index'
-import * as League from './league/index'
-import * as Summoner from './summoner/index'
-import * as Champion from './champion/index'
-import * as ChampionMastery from './championmastery/index'
+import * as Champion from "./champion/index";
+import * as ChampionMastery from "./championmastery/index";
+import * as League from "./league/index";
+import * as Match from "./match/index";
+import * as Status from "./status/index";
+import * as Summoner from "./summoner/index";
 
-export { League }
-export { Status }
-export { Summoner }
-export { Champion }
-export { ChampionMastery }
+export { Match };
+export { League };
+export { Status };
+export { Summoner };
+export { Champion };
+export { ChampionMastery };

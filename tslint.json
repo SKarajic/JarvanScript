@@ -6,6 +6,7 @@
     "jsRules": {},
     "rules": {
         "max-line-length": false,
+        "interface-name": false,
         "no-namespace": false,
         "curly": false
     },

@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import "mocha";
 
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
 
 import { LeagueMethods } from "./league";
 
@@ -14,6 +14,11 @@ const wrapper = new JarvanScript(process.env.RIOT_API_KEY as string, JarvanEnum.
 describe("LeagueMethods", () => {
   it("should get the challenger solo queue league", async () => {
     const ladder = await LeagueMethods.getChallengerLeague(wrapper, "RANKED_SOLO_5x5");
+    expect(ladder.name).to.be.a("string");
+  });
+
+  it("should get the grand master solo queue league", async () => {
+    const ladder = await LeagueMethods.getGrandMasterLeague(wrapper, "RANKED_SOLO_5x5");
     expect(ladder.name).to.be.a("string");
   });
 

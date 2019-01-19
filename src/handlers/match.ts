@@ -1,23 +1,22 @@
-import JarvanManager from "../classes/managers";
+import JarvanScript from "..";
+import JarvanDTO from "../classes/dto";
 import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
+import JarvanManager from "../classes/managers";
 
 const methods = JarvanEnum.Methods.MATCH;
 
 export namespace MatchMethods {
-  export function getMatchList(
+  export async function getMatchList(
+    wrapper: JarvanScript,
     accountId: string,
     region: JarvanEnum.Regions = JarvanManager.RegionManager.getInstance().getRegion(),
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      const url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
-      JarvanManager.RequestManager.getInstance().getDynamicData(url, {accountId}, region)
-        .then((data) => {
-          resolve(JSON.parse(data));
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+  ): Promise<JarvanModelInterface.Match.MatchList> {
+    const url = methods.MATCH_LISTS.BY_ACCOUNT_ID.VALUE;
+    const data = JSON.parse(await JarvanManager.RequestManager.getInstance()
+      .getDynamicData(url, {accountId}, region));
+
+    return new JarvanDTO.Match.MatchList(data, region, wrapper);
   }
 
   export function getMatchInfo(

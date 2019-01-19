@@ -2,10 +2,9 @@ import { expect } from "chai";
 import dotenv = require("dotenv");
 import "mocha";
 
-import JarvanManager from "../classes/managers";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
-
+import JarvanEnum from "../classes/enums";
+import JarvanManager from "../classes/managers";
 
 import { StatusMethods } from "./status";
 

@@ -1,7 +1,7 @@
 import "mocha";
 
-import JarvanManager from "../classes/managers";
 import JarvanEnum from "../classes/enums";
+import JarvanManager from "../classes/managers";
 
 import { SpectateMethods } from "./spectate";
 

@@ -1,3 +1,3 @@
-import * as JarvanModelInterface from './interfaces/index'
+import * as JarvanModelInterface from "./interfaces/index";
 
-export default JarvanModelInterface
+export default JarvanModelInterface;

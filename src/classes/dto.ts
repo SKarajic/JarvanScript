@@ -1,3 +1,3 @@
-import * as JarvanDTO from './dto/index'
+import * as JarvanDTO from "./dto/index";
 
-export default JarvanDTO
+export default JarvanDTO;

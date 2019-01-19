@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../classes/interfaces";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
 
 import { ChampionMethods } from "../handlers";
 
@@ -25,7 +25,7 @@ export default class ChampionWrapper {
    * @param region - (optional) region
    */
   public async getChampionsInfo(
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.Champion.ChampionRotation> {
     return await ChampionMethods.getChampionRotation(
       this.wrapper, region);

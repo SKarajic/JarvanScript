@@ -1,8 +1,8 @@
+import JarvanScript from "..";
+import JarvanDTO from "../classes/dto";
+import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
 import JarvanManager from "../classes/managers";
-import JarvanEnum from "../classes/enums";
-import JarvanDTO from "../classes/dto";
-import JarvanScript from "..";
 
 const methods = JarvanEnum.Methods.STATUS;
 
@@ -13,6 +13,9 @@ export namespace StatusMethods {
 
   /**
    * Gets the status of a server
+   *
+   * endpoints:
+   *  - /lol/status/v3/shard-data
    *
    * @param wrapper - the wrapper
    * @param region - (optional) region

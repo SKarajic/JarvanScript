@@ -1,2 +1,2 @@
-export * from './summoner'
-export * from './profileicon'
+export * from "./summoner";
+export * from "./profileicon";

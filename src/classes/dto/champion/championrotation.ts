@@ -1,9 +1,9 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
-import { RotationChampion } from "./rotationchampion";
 import { DTO } from "../abstract";
+import { RotationChampion } from "./rotationchampion";
 
 /**
  * Champion Rotation
@@ -21,9 +21,9 @@ export class ChampionRotation extends DTO implements JarvanModelInterface.Champi
    * @param wrapper
    */
   public constructor(
-    requestObject: any, 
-    region: JarvanEnum.Regions, 
-    wrapper: JarvanScript
+    requestObject: any,
+    region: JarvanEnum.Regions,
+    wrapper: JarvanScript,
   ) {
     super(region, wrapper);
     const {
@@ -33,7 +33,7 @@ export class ChampionRotation extends DTO implements JarvanModelInterface.Champi
     } = requestObject;
 
     this.maximumNewPlayerLevel = maxNewPlayerLevel;
-    this.freeChampionsForNewPlayers = freeChampionIdsForNewPlayers.map(id => new RotationChampion(id))
-    this.freeChampions = freeChampionIds.map(id => new RotationChampion(id))
+    this.freeChampionsForNewPlayers = freeChampionIdsForNewPlayers.map((id) => new RotationChampion(id));
+    this.freeChampions = freeChampionIds.map((id) => new RotationChampion(id));
   }
 }

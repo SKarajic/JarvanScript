@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../classes/interfaces";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
 
 import { StatusMethods } from "../handlers";
 
@@ -25,7 +25,7 @@ export default class StatusWrapper {
    * @param region - (optional) region
    */
   public async getStatus(
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.Status.Shard> {
     return await StatusMethods.getStatus(
       this.wrapper, region);

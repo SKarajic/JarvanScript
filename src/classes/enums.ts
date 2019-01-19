@@ -1,3 +1,3 @@
-import * as JarvanEnum from './enums/index'
+import * as JarvanEnum from "./enums/index";
 
-export default JarvanEnum
+export default JarvanEnum;

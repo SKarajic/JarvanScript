@@ -1,5 +1,5 @@
-import { MiniSeries } from "./miniseries";
 import { Summoner } from "../index";
+import { MiniSeries } from "./miniseries";
 
 export interface LeagueItem {
   readonly rank: string;
@@ -17,5 +17,5 @@ export interface LeagueItem {
   /**
    * gets the Summoner from the ChampionMastery
    */
-  getSummoner(): Promise<Summoner.Summoner>
+  getSummoner(): Promise<Summoner.Summoner>;
 }

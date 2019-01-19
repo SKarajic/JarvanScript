@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../classes/interfaces";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
 
 import { ChampionMasteryMethods } from "../handlers";
 
@@ -29,7 +29,7 @@ export default class ChampionMasteryWrapper {
   public async getChampionMasteries(
     summonerId: string,
     championId?: number,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.ChampionMastery.ChampionMastery[]> {
     return await ChampionMasteryMethods.getChampionMasteries(
       this.wrapper, summonerId, championId, region);
@@ -43,7 +43,7 @@ export default class ChampionMasteryWrapper {
    */
   public async getChampionMasteryScore(
     summonerId: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<number> {
     return await ChampionMasteryMethods.getChampionMasteryScore(
       summonerId, region);

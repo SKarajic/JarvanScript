@@ -16,5 +16,5 @@ export interface ChampionMastery {
   /**
    * Gets the Summoner from the ChampionMastery
    */
-  getSummoner(): Promise<Summoner.Summoner>
+  getSummoner(): Promise<Summoner.Summoner>;
 }

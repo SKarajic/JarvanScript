@@ -23,6 +23,11 @@ export const Methods = {
         VALUE: "https://{region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/{queue}",
       },
     },
+    GRAND_MASTER_LEAGUES: {
+      BY_QUEUE: {
+        VALUE: "https://{region}.api.riotgames.com/lol/league/v4/grandmasterleagues/by-queue/{queue}",
+      },
+    },
     LEAGUES: {
       BY_LEAGUE_ID: {
         VALUE: "https://{region}.api.riotgames.com/lol/league/v4/leagues/{leagueId}",

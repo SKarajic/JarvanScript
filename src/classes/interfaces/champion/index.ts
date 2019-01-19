@@ -1,2 +1,2 @@
-export * from './championrotation'
-export * from './rotationchampion'
+export * from "./championrotation";
+export * from "./rotationchampion";

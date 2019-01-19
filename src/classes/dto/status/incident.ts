@@ -1,6 +1,7 @@
+import JarvanModelInterface from "../../interfaces";
 import { Message } from "./message";
 
-export class Incident {
+export class Incident implements JarvanModelInterface.Status.Incident {
   public readonly active: boolean;
   public readonly createdAt: Date;
   public readonly id: number;

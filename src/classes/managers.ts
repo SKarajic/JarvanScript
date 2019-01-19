@@ -1,3 +1,3 @@
-import * as JarvanManager from './managers/index'
+import * as JarvanManager from "./managers/index";
 
-export default JarvanManager
+export default JarvanManager;

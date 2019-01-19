@@ -1,9 +1,9 @@
-import JarvanModelInterface from "../../interfaces";
 import JarvanScript from "../../..";
 import JarvanEnum from "../../enums";
+import JarvanModelInterface from "../../interfaces";
 
-import { MiniSeries } from "./miniseries";
 import { DTO } from "../abstract";
+import { MiniSeries } from "./miniseries";
 
 export class LeaguePosition extends DTO implements JarvanModelInterface.League.LeaguePosition {
   public readonly rank: string;

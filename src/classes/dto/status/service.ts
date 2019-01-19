@@ -1,6 +1,7 @@
+import JarvanModelInterface from "../../interfaces";
 import { Incident } from "./incident";
 
-export class Service {
+export class Service implements JarvanModelInterface.Status.Service {
   public readonly status: string;
   public readonly incidents: Incident[];
   public readonly name: string;

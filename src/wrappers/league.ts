@@ -1,6 +1,6 @@
-import JarvanModelInterface from "../classes/interfaces";
-import JarvanEnum from "../classes/enums";
 import JarvanScript from "..";
+import JarvanEnum from "../classes/enums";
+import JarvanModelInterface from "../classes/interfaces";
 
 import { LeagueMethods } from "../handlers";
 
@@ -27,7 +27,7 @@ export default class LeagueWrapper {
    */
   public async getChallengerLeague(
     queue: JarvanEnum.Queues,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.League.LeagueList> {
     return await LeagueMethods.getChallengerLeague(
       this.wrapper, queue, region);
@@ -41,7 +41,7 @@ export default class LeagueWrapper {
    */
   public async getMasterLeague(
     queue: JarvanEnum.Queues,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.League.LeagueList> {
     return await LeagueMethods.getMasterLeague(
       this.wrapper, queue, region);
@@ -55,7 +55,7 @@ export default class LeagueWrapper {
    */
   public async getLeague(
     leagueId: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.League.LeagueList> {
     return await LeagueMethods.getLeague(
       this.wrapper, leagueId, region);
@@ -69,7 +69,7 @@ export default class LeagueWrapper {
    */
   public async getRanks(
     summonerId: string,
-    region?: JarvanEnum.Regions
+    region?: JarvanEnum.Regions,
   ): Promise<JarvanModelInterface.League.LeaguePosition[]> {
     return await LeagueMethods.getRanks(
       this.wrapper, summonerId, region);

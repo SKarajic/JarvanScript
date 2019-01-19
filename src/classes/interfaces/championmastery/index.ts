@@ -1,1 +1,1 @@
-export * from './championmastery'
+export * from "./championmastery";
