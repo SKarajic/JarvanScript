@@ -62,3 +62,4 @@ typings/
 tslint.json
 tsconfig.json
 src
+/.rpt2_cache

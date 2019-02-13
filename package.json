@@ -1,14 +1,30 @@
 {
   "name": "jarvanscript",
-  "version": "0.4.2-alpha",
+  "version": "0.6.1-alpha",
   "description": "A TypeScript RiotAPI wrapper",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "regions.js",
+    "queues.js",
+    "dist"
+  ],
   "scripts": {
-    "test": "mocha --timeout 5000 -r ts-node/register \"src/**/*.test.ts\"",
+    "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --timeout 5000 -r ts-node/register \"src/**/*.test.ts\"",
     "lint": "tslint 'src/**/*.ts'",
-    "build": "rm -rf dist && tsc",
-    "prepublish": "npm run build"
+    "prebuild": "rm -rf dist",
+    "postbuild": "find dist -mindepth 2 -name '*.js' | xargs rm",
+    "build": "npm run build:typescript && npm run build:rollup",
+    "build:typescript": "tsc --module commonjs",
+    "build:rollup": "npm run build:rollup:main && npm run build:rollup:regions && npm run build:rollup:queues",
+    "build:rollup:regions": "rollup -c rollup.config.regions.js",
+    "build:rollup:queues": "rollup -c rollup.config.queues.js",
+    "build:rollup:main": "rollup -c",
+    "publish:before:move": "mv dist/regions.js . && mv dist/queues.js .",
+    "publish:after:move": "mv regions.js dist/ && mv queues.js dist/",
+    "prepublish": "npm run test && npm run build && npm run publish:before:move",
+    "postpublish": "npm run publish:after:move"
   },
   "repository": {
     "type": "git",
@@ -30,6 +46,10 @@
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
     "mocha": "^4.0.1",
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.19.2",
     "ts-node": "^3.3.0",
     "tslint": "^5.12.1",
     "typescript": "^2.9.2"

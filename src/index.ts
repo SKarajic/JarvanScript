@@ -1,5 +1,18 @@
-import JarvanEnum from "./classes/enums";
+import DTO from "./classes/dto";
+import JarvanScript from "./jarvanscript";
 
-export { default } from "./jarvanscript";
-export const regions = JarvanEnum.Regions;
-export const queues = JarvanEnum.Queues;
+import * as Queues from "./classes/enums/queues";
+import * as Regions from "./classes/enums/regions";
+
+module.exports = {
+  Champion: DTO.Champion,
+  ChampionMastery: DTO.ChampionMastery,
+  DTO,
+  League: DTO.League,
+  Match: DTO.Match,
+  Queues: Queues.Queues,
+  Regions: Regions.Regions,
+  Status: DTO.Status,
+  Summoner: DTO.Summoner,
+  default: JarvanScript,
+};

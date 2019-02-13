@@ -1,4 +1,4 @@
-import JarvanScript from "../../..";
+import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 
 export abstract class DTO {

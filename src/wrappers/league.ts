@@ -1,4 +1,4 @@
-import JarvanScript from "..";
+import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
 

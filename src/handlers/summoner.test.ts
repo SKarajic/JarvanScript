@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "mocha";
 
-import JarvanScript from "..";
+import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 
 import { SummonerMethods } from "./summoner";
