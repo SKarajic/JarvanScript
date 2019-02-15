@@ -1,13 +1,13 @@
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
+import JarvanScript from "../jarvanscript";
 
-import { LeagueMethods } from "../handlers";
+import { LeagueMethods } from "../handlers/index";
 
 /**
  * League Wrapper
  */
-export default class LeagueWrapper {
+export class LeagueWrapper implements JarvanModelInterface.Wrapper.LeagueWrapper {
   private wrapper: JarvanScript;
 
   /**

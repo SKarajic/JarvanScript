@@ -1,4 +1,4 @@
-export { RequestManager } from "./requestmanager";
-export { RegionManager } from "./regionmanager";
-export { CacheManager } from "./cachemanager";
-export { KeyManager } from "./keymanager";
+export { RequestManager } from "./requestmanager/index";
+export { RegionManager } from "./regionmanager/index";
+export { CacheManager } from "./cachemanager/index";
+export { KeyManager } from "./keymanager/index";

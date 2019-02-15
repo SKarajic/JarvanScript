@@ -1,4 +1,4 @@
-import { Summoner } from "../index";
+import { Summoner } from "../summoner/index";
 
 /**
  * Summoner's mastery in a Champion
@@ -16,5 +16,5 @@ export interface ChampionMastery {
   /**
    * Gets the Summoner from the ChampionMastery
    */
-  getSummoner(): Promise<Summoner.Summoner>;
+  getSummoner(): Promise<Summoner>;
 }

@@ -1,13 +1,13 @@
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
+import JarvanScript from "../jarvanscript";
 
-import { StatusMethods } from "../handlers";
+import { StatusMethods } from "../handlers/index";
 
 /**
  * Status Wrapper
  */
-export default class StatusWrapper {
+export class StatusWrapper implements JarvanModelInterface.Wrapper.StatusWrapper {
   private wrapper: JarvanScript;
 
   /**

@@ -1,13 +1,13 @@
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
+import JarvanScript from "../jarvanscript";
 
-import { SummonerMethods } from "../handlers";
+import { SummonerMethods } from "../handlers/index";
 
 /**
  * Summoner Wrapper
  */
-export default class SummonerWrapper {
+export class SummonerWrapper implements JarvanModelInterface.Wrapper.SummonerWrapper {
   private wrapper: JarvanScript;
 
   /**

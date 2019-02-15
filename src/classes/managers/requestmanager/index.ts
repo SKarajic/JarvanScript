@@ -2,8 +2,8 @@ import Axios from "axios";
 
 import JarvanEnum from "../../enums";
 
-import { KeyManager } from "../keymanager";
-import { RegionManager } from "../regionmanager";
+import { KeyManager } from "../keymanager/index";
+import { RegionManager } from "../regionmanager/index";
 
 /**
  * A manager that manages the requests and rate limits

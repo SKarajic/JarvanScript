@@ -2,7 +2,7 @@ import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 import JarvanModelInterface from "../../interfaces";
 
-import { DTO } from "../abstract";
+import { DTO } from "../abstract/index";
 import { RotationChampion } from "./rotationchampion";
 
 /**

@@ -1,13 +1,13 @@
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
+import JarvanScript from "../jarvanscript";
 
-import { ChampionMasteryMethods } from "../handlers";
+import { ChampionMasteryMethods } from "../handlers/index";
 
 /**
  * Champion Mastery Wrapper
  */
-export default class ChampionMasteryWrapper {
+export class ChampionMasteryWrapper implements JarvanModelInterface.Wrapper.ChampionMasteryWrapper {
   private wrapper: JarvanScript;
 
   /**

@@ -2,7 +2,7 @@ import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 import JarvanModelInterface from "../../interfaces";
 
-import { DTO } from "../abstract";
+import { DTO } from "../abstract/index";
 import { Incident } from "./incident";
 import { Message } from "./message";
 import { Service } from "./service";

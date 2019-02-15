@@ -59,5 +59,7 @@ typings/
 /.vscode
 
 /dist
+/lib
+/build/compiled
 package-lock.json
 /.rpt2_cache

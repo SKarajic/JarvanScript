@@ -1,4 +1,4 @@
-import { Summoner } from "../index";
+import { Summoner } from "../summoner/index";
 import { MiniSeries } from "./miniseries";
 
 export interface LeaguePosition {
@@ -20,5 +20,5 @@ export interface LeaguePosition {
   /**
    * gets the Summoner from the ChampionMastery
    */
-  getSummoner(): Promise<Summoner.Summoner>;
+  getSummoner(): Promise<Summoner>;
 }

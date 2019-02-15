@@ -61,5 +61,8 @@ typings/
 .gitignore
 tslint.json
 tsconfig.json
-src
+
+/src
+/dist
 /.rpt2_cache
+

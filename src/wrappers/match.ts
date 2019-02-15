@@ -1,13 +1,13 @@
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanModelInterface from "../classes/interfaces";
+import JarvanScript from "../jarvanscript";
 
-import { MatchMethods } from "../handlers";
+import { MatchMethods } from "../handlers/index";
 
 /**
  * Match Wrapper
  */
-export default class MatchWrapper {
+export class MatchWrapper implements JarvanModelInterface.Wrapper.MatchWrapper {
   private wrapper: JarvanScript;
 
   /**

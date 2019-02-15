@@ -2,7 +2,7 @@ import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 import JarvanModelInterface from "../../interfaces";
 
-import { DTO } from "../abstract";
+import { DTO } from "../abstract/index";
 
 export class MiniSeries extends DTO implements JarvanModelInterface.League.MiniSeries {
   public readonly wins: number;

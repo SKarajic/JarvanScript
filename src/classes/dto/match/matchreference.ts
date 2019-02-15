@@ -1,7 +1,7 @@
 import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 import JarvanModelInterface from "../../interfaces";
-import { DTO } from "../abstract";
+import { DTO } from "../abstract/index";
 
 export class MatchReference extends DTO implements JarvanModelInterface.Match.MatchReference {
   public platformId: string;
