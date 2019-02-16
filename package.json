@@ -1,6 +1,6 @@
 {
   "name": "jarvanscript",
-  "version": "0.7.3-alpha",
+  "version": "0.8.0-alpha",
   "description": "A TypeScript RiotAPI wrapper",
   "main": "lib/jarvanscript.js",
   "types": "lib/jarvanscript.d.ts",

@@ -9,7 +9,7 @@ import { ProfileIcon } from "./profileicon";
  * Summoner
  */
 export class Summoner extends DTO implements JarvanModelInterface.Summoner.Summoner {
-  public readonly id: number;
+  public readonly id: string;
   public readonly accountId: string;
   public readonly name: string;
   public readonly profileIcon: ProfileIcon;
