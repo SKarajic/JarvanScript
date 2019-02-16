@@ -4,12 +4,14 @@ var fs = require('fs');
 
 
 module.exports = {
+  entry: './index.ts',
   mode: 'production',
-  target: 'node',
   externals: [nodeExternals()],
   context: path.resolve(__dirname, 'src'),
-  entry: {
-    main: './index',
+  output: {
+    filename: 'jarvanscript.js',
+    path: path.resolve(__dirname, 'lib'),
+    libraryTarget: 'commonjs',
   },
   module: {
     rules: [
@@ -24,10 +26,6 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".ts"]
-  },
-  output: {
-    filename: 'jarvanscript.js',
-    path: path.resolve(__dirname, 'lib'),
   },
   plugins: [
     new DtsBundlePlugin({

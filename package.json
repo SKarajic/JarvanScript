@@ -1,6 +1,6 @@
 {
   "name": "jarvanscript",
-  "version": "0.7.2-alpha",
+  "version": "0.7.3-alpha",
   "description": "A TypeScript RiotAPI wrapper",
   "main": "lib/jarvanscript.js",
   "types": "lib/jarvanscript.d.ts",
@@ -33,7 +33,6 @@
     "dts-bundle": "^0.7.3",
     "mocha": "^4.0.1",
     "ts-loader": "^5.3.3",
-    "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3",
     "webpack": "^4.29.3",
