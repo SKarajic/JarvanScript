@@ -9,7 +9,7 @@ const regManager = JarvanManager.RegionManager.getInstance();
 const reqManager = JarvanManager.RequestManager.getInstance();
 
 /**
- * Methods handling the LEAGUE-V3 endpoints
+ * Methods handling the LEAGUE-V4 endpoints
  */
 export namespace LeagueMethods {
 

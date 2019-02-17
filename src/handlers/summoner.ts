@@ -8,7 +8,7 @@ import JarvanScript from "../jarvanscript";
 const methods = JarvanEnum.Methods.SUMMONER;
 
 /**
- * Methods handling the SUMMONER-V3 endpoints
+ * Methods handling the SUMMONER-V4 endpoints
  */
 export namespace SummonerMethods {
 
