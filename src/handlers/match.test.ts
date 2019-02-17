@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import "mocha";
 
-import JarvanScript from "../jarvanscript";
 import JarvanEnum from "../classes/enums";
 import JarvanManager from "../classes/managers";
+import JarvanScript from "../jarvanscript";
 
 import { MatchMethods } from "./match";
 
@@ -25,19 +25,10 @@ describe("MatchMethods", () => {
     expect(matchList.matches.length).to.equal(100);
   });
 
-  it("should get recent matchlist of summoner", (done) => {
-    MatchMethods.getMatchList(wrapper, "aZkB1Uo_IAKjX2dwqzwOyC0gouGTz8PQ_mBsY7JEaXaOwcY")
-    .then((data) => {
-      done();
-    });
-  });
-
-  it("should get match info of one of the matches of summoner", (done) => {
-    MatchMethods.getMatchList(wrapper, "aZkB1Uo_IAKjX2dwqzwOyC0gouGTz8PQ_mBsY7JEaXaOwcY")
-    .then((data) => MatchMethods.getMatchInfo(data.matches[0].gameId))
-    .then((data) => {
-      done();
-    });
+  it("should get match info of one of the matches of summoner", async () => {
+    const matchList = await MatchMethods.getMatchList(wrapper, "aZkB1Uo_IAKjX2dwqzwOyC0gouGTz8PQ_mBsY7JEaXaOwcY");
+    const match = await MatchMethods.getMatch(wrapper, matchList.matches[0].gameId);
+    expect(match.gameId).to.equal(matchList.matches[0].gameId);
   });
 
   it("should get match timeline of one of the matches of summoner", (done) => {

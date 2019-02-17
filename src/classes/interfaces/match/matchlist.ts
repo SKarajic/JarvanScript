@@ -1,8 +1,8 @@
 import { MatchReference } from "./matchreference";
 
 export interface MatchList {
-  matches: MatchReference[];
-  startIndex: number;
   endIndex: number;
+  startIndex: number;
   totalGames: number;
+  matches: MatchReference[];
 }

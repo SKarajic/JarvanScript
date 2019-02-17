@@ -32,4 +32,18 @@ export class MatchWrapper implements JarvanModelInterface.Wrapper.MatchWrapper {
     return await MatchMethods.getMatchList(
       this.wrapper, accountId, region);
   }
+
+  /**
+   * Gets the Match by MatchID
+   *
+   * @param matchId - matchID of the match in question
+   * @param region - (optional) region
+   */
+  public async getMatch(
+    matchId: number,
+    region?: JarvanEnum.Regions,
+  ): Promise<JarvanModelInterface.Match.Match> {
+    return await MatchMethods.getMatch(
+      this.wrapper, matchId, region);
+  }
 }

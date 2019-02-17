@@ -6,10 +6,10 @@ import { DTO } from "../abstract/index";
 export class MatchReference extends DTO implements JarvanModelInterface.Match.MatchReference {
   public platformId: string;
   public championId: number;
-  public gameId: any;
+  public gameId: number;
   public queueId: number;
   public seasonId: number;
-  public timestamp: any;
+  public timestamp: number;
   public role: string;
   public lane: string;
 

@@ -4,12 +4,12 @@ import { Regions } from "../classes/enums/regions";
  * The TypeScript Riot API wrapper
  */
 export default class JarvanScript {
-    championMastery: ChampionMasteryWrapper;
-    champion: ChampionWrapper;
-    league: LeagueWrapper;
-    match: MatchWrapper;
-    summoner: SummonerWrapper;
-    status: StatusWrapper;
+    public championMastery: ChampionMasteryWrapper;
+    public champion: ChampionWrapper;
+    public league: LeagueWrapper;
+    public match: MatchWrapper;
+    public summoner: SummonerWrapper;
+    public status: StatusWrapper;
     /**
      * creates a new wrapper instance
      *

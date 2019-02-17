@@ -6,7 +6,7 @@
   "types": "lib/jarvanscript.d.ts",
   "scripts": {
     "test": "mocha --timeout 5000 -r ts-node/register \"src/**/*.test.ts\"",
-    "lint": "tslint 'src/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts' --fix",
     "prebuild": "rimraf lib dist",
     "build": "webpack",
     "prepublish": "npm run test && npm run build"

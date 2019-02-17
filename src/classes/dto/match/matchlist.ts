@@ -2,6 +2,7 @@ import JarvanScript from "../../../jarvanscript";
 import JarvanEnum from "../../enums";
 import JarvanModelInterface from "../../interfaces";
 import { DTO } from "../abstract/index";
+
 import { MatchReference } from "./matchreference";
 
 export class MatchList extends DTO implements JarvanModelInterface.Match.MatchList {
