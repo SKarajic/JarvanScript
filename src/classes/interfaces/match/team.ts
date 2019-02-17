@@ -1,7 +1,7 @@
 import { TeamBan } from "./ban";
 
 export interface Team {
-  win: string;
+  win: boolean;
   bans: TeamBan[];
   teamId: number;
   firstBlood: boolean;

@@ -2,9 +2,9 @@ import { Participant } from "./participant";
 import { Team } from "./team";
 
 export interface Match {
+  id: number;
   teams: Team[];
   mapId: number;
-  gameId: number;
   queueId: number;
   seasonId: number;
   gameMode: string;

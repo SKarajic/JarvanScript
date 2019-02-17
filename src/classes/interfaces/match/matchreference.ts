@@ -1,7 +1,7 @@
 export interface MatchReference {
   role: string;
   lane: string;
-  gameId: number;
+  matchId: number;
   queueId: number;
   seasonId: number;
   timestamp: number;

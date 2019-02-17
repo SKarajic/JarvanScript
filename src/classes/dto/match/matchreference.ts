@@ -4,35 +4,35 @@ import JarvanModelInterface from "../../interfaces";
 import { DTO } from "../abstract/index";
 
 export class MatchReference extends DTO implements JarvanModelInterface.Match.MatchReference {
-  public platformId: string;
-  public championId: number;
-  public gameId: number;
+  public role: string;
+  public lane: string;
+  public matchId: number;
   public queueId: number;
   public seasonId: number;
   public timestamp: number;
-  public role: string;
-  public lane: string;
+  public platformId: string;
+  public championId: number;
 
   public constructor(requestObject: any, region: JarvanEnum.Regions, wrapper: JarvanScript) {
     super(region, wrapper);
     const {
-      platformId,
-      timestamp,
-      champion,
-      season,
-      gameId,
-      queue,
       role,
       lane,
+      queue,
+      gameId,
+      season,
+      champion,
+      timestamp,
+      platformId,
     } = requestObject;
 
-    this.platformId = platformId;
-    this.championId = champion;
-    this.timestamp = timestamp;
-    this.seasonId = season;
-    this.queueId = queue;
-    this.gameId = gameId;
     this.role = role;
     this.lane = lane;
+    this.queueId = queue;
+    this.matchId = gameId;
+    this.seasonId = season;
+    this.timestamp = timestamp;
+    this.championId = champion;
+    this.platformId = platformId;
   }
 }

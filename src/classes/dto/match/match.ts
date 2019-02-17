@@ -7,9 +7,9 @@ import { Participant } from "./participant";
 import { Team } from "./team";
 
 export class Match extends DTO implements JarvanModelInterface.Match.Match {
+  public id: number;
   public teams: Team[];
   public mapId: number;
-  public gameId: number;
   public queueId: number;
   public seasonId: number;
   public gameMode: string;
@@ -48,7 +48,7 @@ export class Match extends DTO implements JarvanModelInterface.Match.Match {
 
     this.teams = teams.map((team) => new Team(team, region, wrapper));
     this.mapId = mapId;
-    this.gameId = gameId;
+    this.id = gameId;
     this.queueId = queueId;
     this.seasonId = seasonId;
     this.gameMode = gameMode;

@@ -12,14 +12,14 @@ export abstract class DTO {
   }
 
   public toJSON() {
-    const copy = <any> Object.assign({}, this);
+    const copy = Object.assign({}, this) as any;
     delete copy.wrapper;
     delete copy.region;
 
     for (const key in this) {
       if (this.hasOwnProperty(key)) {
         if (this[key] instanceof Map) {
-          copy[key] = mapToObj(this[key])
+          copy[key] = mapToObj(this[key]);
         }
       }
     }

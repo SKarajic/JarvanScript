@@ -27,13 +27,14 @@ describe("MatchMethods", () => {
 
   it("should get match info of one of the matches of summoner", async () => {
     const matchList = await MatchMethods.getMatchList(wrapper, "aZkB1Uo_IAKjX2dwqzwOyC0gouGTz8PQ_mBsY7JEaXaOwcY");
-    const match = await MatchMethods.getMatch(wrapper, matchList.matches[0].gameId);
-    expect(match.gameId).to.equal(matchList.matches[0].gameId);
+    const match = await MatchMethods.getMatch(wrapper, matchList.matches[0].matchId);
+    console.log(JSON.stringify(match));
+    expect(match.id).to.equal(matchList.matches[0].matchId);
   });
 
   it("should get match timeline of one of the matches of summoner", (done) => {
     MatchMethods.getMatchList(wrapper, "aZkB1Uo_IAKjX2dwqzwOyC0gouGTz8PQ_mBsY7JEaXaOwcY")
-    .then((data) => MatchMethods.getMatchTimeline(data.matches[0].gameId))
+    .then((data) => MatchMethods.getMatchTimeline(data.matches[0].matchId))
     .then((data) => {
       done();
     });

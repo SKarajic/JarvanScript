@@ -6,7 +6,7 @@ import { DTO } from "../abstract/index";
 import { TeamBan } from "./ban";
 
 export class Team extends DTO implements JarvanModelInterface.Match.Team {
-  public win: string;
+  public win: boolean;
   public bans: TeamBan[];
   public teamId: number;
   public firstBlood: boolean;
@@ -44,7 +44,7 @@ export class Team extends DTO implements JarvanModelInterface.Match.Team {
       dominionVictoryScore,
     } = requestObject;
 
-    this.win = win;
+    this.win = (win === "Win");
     this.bans = bans.map((ban) => new TeamBan(ban, region, wrapper));
     this.teamId = teamId;
     this.firstBlood = firstBlood;
